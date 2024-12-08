@@ -2,55 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://goodjobabc.github.io/ShanShanBlog.github.io/ar/categories/</loc>
+    <loc>http://localhost:1313/ShanShanBlog.github.io/ar/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://goodjobabc.github.io/ShanShanBlog.github.io/en/categories/"
+                href="http://localhost:1313/ShanShanBlog.github.io/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://goodjobabc.github.io/ShanShanBlog.github.io/categories/"
+                href="http://localhost:1313/ShanShanBlog.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://goodjobabc.github.io/ShanShanBlog.github.io/ar/categories/"
+                href="http://localhost:1313/ShanShanBlog.github.io/ar/categories/"
                 />
   </url><url>
-    <loc>https://goodjobabc.github.io/ShanShanBlog.github.io/ar/tags/</loc>
+    <loc>http://localhost:1313/ShanShanBlog.github.io/ar/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://goodjobabc.github.io/ShanShanBlog.github.io/en/tags/"
+                href="http://localhost:1313/ShanShanBlog.github.io/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://goodjobabc.github.io/ShanShanBlog.github.io/tags/"
+                href="http://localhost:1313/ShanShanBlog.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://goodjobabc.github.io/ShanShanBlog.github.io/ar/tags/"
+                href="http://localhost:1313/ShanShanBlog.github.io/ar/tags/"
                 />
   </url><url>
-    <loc>https://goodjobabc.github.io/ShanShanBlog.github.io/ar/</loc>
+    <loc>http://localhost:1313/ShanShanBlog.github.io/ar/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://goodjobabc.github.io/ShanShanBlog.github.io/en/"
+                href="http://localhost:1313/ShanShanBlog.github.io/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://goodjobabc.github.io/ShanShanBlog.github.io/"
+                href="http://localhost:1313/ShanShanBlog.github.io/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://goodjobabc.github.io/ShanShanBlog.github.io/ar/"
+                href="http://localhost:1313/ShanShanBlog.github.io/ar/"
                 />
   </url>
 </urlset>
