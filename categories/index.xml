@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on 单单工作室的博客</title>
-        <link>https://goodjobabc.github.io/ShanShanBlog.github.io/categories/</link>
+        <link>https://goodjobabc.github.io/categories/</link>
         <description>Recent content in Categories on 单单工作室的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ShanShanStdio</copyright>
-        <lastBuildDate>Fri, 06 Dec 2024 21:24:00 +0800</lastBuildDate><atom:link href="https://goodjobabc.github.io/ShanShanBlog.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 06 Dec 2024 21:24:00 +0800</lastBuildDate><atom:link href="https://goodjobabc.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Programming</title>
-        <link>https://goodjobabc.github.io/ShanShanBlog.github.io/categories/programming/</link>
+        <link>https://goodjobabc.github.io/categories/programming/</link>
         <pubDate>Fri, 06 Dec 2024 21:24:00 +0800</pubDate>
         
-        <guid>https://goodjobabc.github.io/ShanShanBlog.github.io/categories/programming/</guid>
+        <guid>https://goodjobabc.github.io/categories/programming/</guid>
         <description></description>
         </item>
         <item>
         <title>Infomation</title>
-        <link>https://goodjobabc.github.io/ShanShanBlog.github.io/categories/infomation/</link>
+        <link>https://goodjobabc.github.io/categories/infomation/</link>
         <pubDate>Fri, 06 Dec 2024 21:14:23 +0800</pubDate>
         
-        <guid>https://goodjobabc.github.io/ShanShanBlog.github.io/categories/infomation/</guid>
+        <guid>https://goodjobabc.github.io/categories/infomation/</guid>
         <description></description>
         </item>
         
