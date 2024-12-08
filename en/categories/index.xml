@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on Shan Shan Stdio BLOG</title>
-        <link>http://localhost:1313/ShanShanBlog.github.io/en/categories/</link>
+        <link>https://goodjobabc.github.io/ShanShanBlog.github.io/en/categories/</link>
         <description>Recent content in Categories on Shan Shan Stdio BLOG</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <copyright>ShanShanStdio</copyright><atom:link href="http://localhost:1313/ShanShanBlog.github.io/en/categories/index.xml" rel="self" type="application/rss+xml" />
+        <copyright>ShanShanStdio</copyright><atom:link href="https://goodjobabc.github.io/ShanShanBlog.github.io/en/categories/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>
