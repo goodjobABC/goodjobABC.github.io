@@ -20,6 +20,8 @@
 注：本文使用&lt;a class=&#34;link&#34; href=&#34;https://github.com/lxgw/LxgwWenKai&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;霞鹜文楷&lt;/a&gt;
 &lt;br&gt;
+声明：本文由@Shanziyi原创，转载/引用请标明出处！ ©Shanziyi 2024
+&lt;br&gt;
 装有Git的Windows PC 一台（Windows 10+）
 &lt;br&gt;
 一个Github账号&lt;/p&gt;
@@ -78,6 +80,30 @@
 	
 	
 &gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;接着，在此处右键，选择&lt;code&gt;更多选项···&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;选择&lt;code&gt;Git Bash here&lt;/code&gt;或&lt;code&gt;Open Git Bash here&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;接着，输入名令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git init &lt;span class=&#34;c1&#34;&gt;#先输入这条&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git submodule &amp;lt; 你想要的主题的仓库网址 &amp;gt; /themes/ &amp;lt; 你的主题名字 &amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;参考文献（按对本文做的贡献排名）：&lt;br&gt;
+&lt;a href=&#34;https://ratmomo.github.io/p/2024/06/%E4%BD%BF%E7%94%A8-hugo--github-pages-%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/#%E7%95%AA%E5%A4%96%E7%AF%87%E4%BD%BF%E7%94%A8github-action%E8%87%AA%E5%8A%A8%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2&#34;&gt;使用 Hugo + Github Pages 部署个人博客——ratmomo&amp;rsquo;s blog&lt;/a&gt;
+&lt;br&gt;
+&lt;a href =&#34;https://gohugo.io/documentation/&#34;&gt;Hugo Documentation&lt;/a&gt;
+&lt;br&gt;
+&lt;a href =&#34;https://qing.shuncs.com/post/tech/hugo/&#34;&gt;解决Hugo无法加载css文件——瞬间的博客&lt;/a&gt;
+&lt;br&gt;
+&lt;a href =&#34;https://docs.chocolatey.org/en-us/&#34;&gt;Chocolatey - Software Management for Windows&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         </item>
         <item>
