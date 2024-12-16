@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="怎样建立属于你的个人博客\r需求配置： 注：本文使用霞鹜文楷 声明：本文由@Shanziyi原创，转载/引用请标明出处！ ©Shanziyi 2024 装有Git的Windows PC 一台（Windows 10+） 一个Github账号\n准备工作：\r首先,建立一个仓库，命名必须符合&lt;用户名&gt;.github.io形式，设为公开 接着，建立一个博客文件夹，如D:\\blog\n安装hugo\r法一：使用winget\n1 winget install Hugo.Hugo.Extended 法二：使用包管理器Chocolatey\n安装Chocolatey:\n1 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;)) 或参见Chocolatey官网\n安装hugo:\n1 choco install hugo-extended 新建博客项目\r1 hugo new site exampleblog # 可以替换成任意你想要的名字 结构如下图\n接着，在此处右键，选择更多选项···\n选择Git Bash here或Open Git Bash here\n接着，输入名令\n1 2 git init #先输入这条 git submodule &lt; 你想要的主题的仓库网址 &gt; /themes/ &lt; 你的主题名字 &gt; 参考文献（按对本文做的贡献排名）：\n使用 Hugo + Github Pages 部署个人博客——ratmomo&rsquo;s blog Hugo Documentation 解决Hugo无法加载css文件——瞬间的博客 Chocolatey - Software Management for Windows\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="怎样建立属于你的个人博客\r需求配置： 注：本文使用霞鹜文楷 声明：本文由@Shanziyi原创，转载/引用请标明出处！ ©Shanziyi 2024 装有Git的Windows PC 一台（Windows 10+） 一个Github账号\n准备工作：\r首先,建立一个仓库，命名必须符合&lt;用户名&gt;.github.io形式，设为公开 接着，建立一个博客文件夹，如D:\\blog\n安装hugo\r法一：使用winget\n1 winget install Hugo.Hugo.Extended 法二：使用包管理器Chocolatey\n安装Chocolatey:\n1 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;)) 或参见Chocolatey官网\n安装hugo:\n1 choco install hugo-extended 新建博客项目\r1 hugo new site exampleblog # 可以替换成任意你想要的名字 结构如下图\n接着，在此处右键，选择更多选项···\n选择Git Bash here或Open Git Bash here\n接着，输入名令\n1 2 git init #先输入这条 git submodule &lt; 你想要的主题的仓库网址 &gt; /themes/ &lt; 你的主题名字 &gt; 参考文献（按对本文做的贡献排名）：\n使用 Hugo + Github Pages 部署个人博客——ratmomo&rsquo;s blog Hugo Documentation 解决Hugo无法加载css文件——瞬间的博客 Chocolatey - Software Management for Windows ">
 <title>怎样建立属于你的个人博客（包含避坑指南）</title>
 
 <link rel='canonical' href='https://goodjobabc.github.io/p/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%8C%85%E5%90%AB%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/'>
 
 <link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="怎样建立属于你的个人博客（包含避坑指南）">
-<meta property='og:description' content="怎样建立属于你的个人博客\r需求配置： 注：本文使用霞鹜文楷 声明：本文由@Shanziyi原创，转载/引用请标明出处！ ©Shanziyi 2024 装有Git的Windows PC 一台（Windows 10+） 一个Github账号\n准备工作：\r首先,建立一个仓库，命名必须符合&lt;用户名&gt;.github.io形式，设为公开 接着，建立一个博客文件夹，如D:\\blog\n安装hugo\r法一：使用winget\n1 winget install Hugo.Hugo.Extended 法二：使用包管理器Chocolatey\n安装Chocolatey:\n1 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;)) 或参见Chocolatey官网\n安装hugo:\n1 choco install hugo-extended 新建博客项目\r1 hugo new site exampleblog # 可以替换成任意你想要的名字 结构如下图\n接着，在此处右键，选择更多选项···\n选择Git Bash here或Open Git Bash here\n接着，输入名令\n1 2 git init #先输入这条 git submodule &lt; 你想要的主题的仓库网址 &gt; /themes/ &lt; 你的主题名字 &gt; 参考文献（按对本文做的贡献排名）：\n使用 Hugo + Github Pages 部署个人博客——ratmomo&rsquo;s blog Hugo Documentation 解决Hugo无法加载css文件——瞬间的博客 Chocolatey - Software Management for Windows\n">
+<meta property='og:description' content="怎样建立属于你的个人博客\r需求配置： 注：本文使用霞鹜文楷 声明：本文由@Shanziyi原创，转载/引用请标明出处！ ©Shanziyi 2024 装有Git的Windows PC 一台（Windows 10+） 一个Github账号\n准备工作：\r首先,建立一个仓库，命名必须符合&lt;用户名&gt;.github.io形式，设为公开 接着，建立一个博客文件夹，如D:\\blog\n安装hugo\r法一：使用winget\n1 winget install Hugo.Hugo.Extended 法二：使用包管理器Chocolatey\n安装Chocolatey:\n1 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;)) 或参见Chocolatey官网\n安装hugo:\n1 choco install hugo-extended 新建博客项目\r1 hugo new site exampleblog # 可以替换成任意你想要的名字 结构如下图\n接着，在此处右键，选择更多选项···\n选择Git Bash here或Open Git Bash here\n接着，输入名令\n1 2 git init #先输入这条 git submodule &lt; 你想要的主题的仓库网址 &gt; /themes/ &lt; 你的主题名字 &gt; 参考文献（按对本文做的贡献排名）：\n使用 Hugo + Github Pages 部署个人博客——ratmomo&rsquo;s blog Hugo Documentation 解决Hugo无法加载css文件——瞬间的博客 Chocolatey - Software Management for Windows ">
 <meta property='og:url' content='https://goodjobabc.github.io/p/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%8C%85%E5%90%AB%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/'>
 <meta property='og:site_name' content='单单工作室的博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='web' /><meta property='article:published_time' content='2024-12-06T21:24:00&#43;08:00'/><meta property='article:modified_time' content='2024-12-06T21:24:00&#43;08:00'/>
 <meta name="twitter:title" content="怎样建立属于你的个人博客（包含避坑指南）">
-<meta name="twitter:description" content="怎样建立属于你的个人博客\r需求配置： 注：本文使用霞鹜文楷 声明：本文由@Shanziyi原创，转载/引用请标明出处！ ©Shanziyi 2024 装有Git的Windows PC 一台（Windows 10+） 一个Github账号\n准备工作：\r首先,建立一个仓库，命名必须符合&lt;用户名&gt;.github.io形式，设为公开 接着，建立一个博客文件夹，如D:\\blog\n安装hugo\r法一：使用winget\n1 winget install Hugo.Hugo.Extended 法二：使用包管理器Chocolatey\n安装Chocolatey:\n1 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;)) 或参见Chocolatey官网\n安装hugo:\n1 choco install hugo-extended 新建博客项目\r1 hugo new site exampleblog # 可以替换成任意你想要的名字 结构如下图\n接着，在此处右键，选择更多选项···\n选择Git Bash here或Open Git Bash here\n接着，输入名令\n1 2 git init #先输入这条 git submodule &lt; 你想要的主题的仓库网址 &gt; /themes/ &lt; 你的主题名字 &gt; 参考文献（按对本文做的贡献排名）：\n使用 Hugo + Github Pages 部署个人博客——ratmomo&rsquo;s blog Hugo Documentation 解决Hugo无法加载css文件——瞬间的博客 Chocolatey - Software Management for Windows\n"><style>
+<meta name="twitter:description" content="怎样建立属于你的个人博客\r需求配置： 注：本文使用霞鹜文楷 声明：本文由@Shanziyi原创，转载/引用请标明出处！ ©Shanziyi 2024 装有Git的Windows PC 一台（Windows 10+） 一个Github账号\n准备工作：\r首先,建立一个仓库，命名必须符合&lt;用户名&gt;.github.io形式，设为公开 接着，建立一个博客文件夹，如D:\\blog\n安装hugo\r法一：使用winget\n1 winget install Hugo.Hugo.Extended 法二：使用包管理器Chocolatey\n安装Chocolatey:\n1 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;)) 或参见Chocolatey官网\n安装hugo:\n1 choco install hugo-extended 新建博客项目\r1 hugo new site exampleblog # 可以替换成任意你想要的名字 结构如下图\n接着，在此处右键，选择更多选项···\n选择Git Bash here或Open Git Bash here\n接着，输入名令\n1 2 git init #先输入这条 git submodule &lt; 你想要的主题的仓库网址 &gt; /themes/ &lt; 你的主题名字 &gt; 参考文献（按对本文做的贡献排名）：\n使用 Hugo + Github Pages 部署个人博客——ratmomo&rsquo;s blog Hugo Documentation 解决Hugo无法加载css文件——瞬间的博客 Chocolatey - Software Management for Windows "><style>
   :root {
     --sys-font-family: "LXGW WenKai";
     --zh-font-family: "LXGW WenKai";
@@ -64,7 +64,7 @@
         }
     })();
 </script>
-<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -86,8 +86,6 @@
                     
                 
                 </a>
-                
-                    <span class="emoji">🍥</span>
                 
             </figure>
             
@@ -196,47 +194,7 @@
     </ol>
 </aside>
 
-    <aside class="sidebar right-sidebar sticky">
-        
-            
-                
-    <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">目录</h2>
-        
-        <div class="widget--toc">
-            <nav id="TableOfContents">
-  <ol>
-    <li>
-      <ol>
-        <li><a href="#准备工作">准备工作：</a>
-          <ol>
-            <li><a href="#安装hugo">安装hugo</a></li>
-            <li><a href="#新建博客项目">新建博客项目</a></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
-  </ol>
-</nav>
-        </div>
-    </section>
-
-            
-        
-    </aside>
-
+    
 
             <main class="main full-width">
     <article class="main-article">
@@ -396,7 +354,15 @@
 <br>
 <a href ="https://qing.shuncs.com/post/tech/hugo/">解决Hugo无法加载css文件——瞬间的博客</a>
 <br>
-<a href ="https://docs.chocolatey.org/en-us/">Chocolatey - Software Management for Windows</a></p>
+<a href ="https://docs.chocolatey.org/en-us/">Chocolatey - Software Management for Windows</a>
+<br></p>
+</blockquote>
+<hr>
+<blockquote>
+<p>许可协议及署名：
+<br>
+<strong>本文采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0协议</a>进行署名——Shanziyi</strong><br>
+<strong>©Shanziyi 2024</strong></p>
 </blockquote>
 
 </section>
@@ -411,45 +377,9 @@
     </section>
 
 
-    
-    <section class="article-copyright">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
-</svg>
-
-
-
-        <span>Licensed under CC BY-NC-SA 4.0</span>
-    </section>
     </footer>
 
 
-    
-        <link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
-            ><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
-                defer
-                >
-            </script><script>
-    window.addEventListener("DOMContentLoaded", () => {
-        renderMathInElement(document.body, {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ],
-            ignoredClasses: ["gist"]
-        });})
-</script>
     
 </article>
 
@@ -460,55 +390,11 @@
      
     
         
-    <div class="disqus-container">
-    <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</div>
-
-<style>
-    .disqus-container {
-        background-color: var(--card-background);
-        border-radius: var(--card-border-radius);
-        box-shadow: var(--shadow-l1);
-        padding: var(--card-padding);
-    }
-</style>
-
-<script>
-    window.addEventListener('onColorSchemeChange', (e) => {
-        if (typeof DISQUS == 'object') {
-            DISQUS.reset({
-                reload: true
-            });
-        }
-    })
-</script>
-
     
 
     <footer class="site-footer">
     <section class="copyright">
         &copy; 
-        
-            2020 - 
         
         2024 ShanShanStdio
     </section>
