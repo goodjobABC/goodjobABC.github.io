@@ -2,8 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://goodjobabc.github.io/</loc>
+    <lastmod>2024-12-22T21:24:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://goodjobabc.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ar"
+                href="https://goodjobabc.github.io/ar/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://goodjobabc.github.io/"
+                />
+  </url><url>
     <loc>https://goodjobabc.github.io/categories/</loc>
-    <lastmod>2024-12-06T21:24:00+08:00</lastmod>
+    <lastmod>2024-12-22T15:50:06+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -20,14 +38,14 @@
                 href="https://goodjobabc.github.io/categories/"
                 />
   </url><url>
-    <loc>https://goodjobabc.github.io/post/</loc>
-    <lastmod>2024-12-06T21:24:00+08:00</lastmod>
+    <loc>https://goodjobabc.github.io/p/congratulations/</loc>
+    <lastmod>2024-12-22T15:50:06+08:00</lastmod>
   </url><url>
-    <loc>https://goodjobabc.github.io/categories/programming/</loc>
-    <lastmod>2024-12-06T21:24:00+08:00</lastmod>
+    <loc>https://goodjobabc.github.io/post/</loc>
+    <lastmod>2024-12-22T15:50:06+08:00</lastmod>
   </url><url>
     <loc>https://goodjobabc.github.io/tags/</loc>
-    <lastmod>2024-12-06T21:24:00+08:00</lastmod>
+    <lastmod>2024-12-22T15:50:06+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -45,25 +63,13 @@
                 />
   </url><url>
     <loc>https://goodjobabc.github.io/tags/web/</loc>
-    <lastmod>2024-12-06T21:24:00+08:00</lastmod>
+    <lastmod>2024-12-22T15:50:06+08:00</lastmod>
   </url><url>
-    <loc>https://goodjobabc.github.io/</loc>
+    <loc>https://goodjobabc.github.io/categories/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/</loc>
+    <lastmod>2024-12-22T15:50:06+08:00</lastmod>
+  </url><url>
+    <loc>https://goodjobabc.github.io/categories/programming/</loc>
     <lastmod>2024-12-06T21:24:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://goodjobabc.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ar"
-                href="https://goodjobabc.github.io/ar/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://goodjobabc.github.io/"
-                />
   </url><url>
     <loc>https://goodjobabc.github.io/p/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%8C%85%E5%90%AB%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/</loc>
     <lastmod>2024-12-06T21:24:00+08:00</lastmod>
@@ -73,5 +79,9 @@
   </url><url>
     <loc>https://goodjobabc.github.io/p/%E4%BB%8B%E7%BB%8D/</loc>
     <lastmod>2024-12-06T21:14:23+08:00</lastmod>
+  </url><url>
+    <loc>https://goodjobabc.github.io/</loc>
+  </url><url>
+    <loc>https://goodjobabc.github.io/page/</loc>
   </url>
 </urlset>
