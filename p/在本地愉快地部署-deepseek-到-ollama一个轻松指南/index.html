@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="怎样建立属于你的个人博客\r在欣赏博客时配上纯音乐吧~\n需求配置： 注：本文使用霞鹜文楷 声明：本文由@Shanziyi原创，转载/引用请标明出处！ ©Shanziyi 2024 装有Git的Windows PC 一台（Windows 10+） 一个Github账号\n准备工作：\r首先,建立一个仓库，命名必须符合&lt;用户名&gt;.github.io形式，设为公开 接着，建立一个博客文件夹，如D:\\blog\n安装hugo\r法一：使用winget\n1 winget install Hugo.Hugo.Extended 法二：使用包管理器Chocolatey\n安装Chocolatey:\n1 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;)) 或参见Chocolatey官网\n安装hugo:\n1 choco install hugo-extended 新建博客项目\r1 hugo new site exampleblog # 可以替换成任意你想要的名字 结构如下图\n接着，在此处右键，选择更多选项···\n选择Git Bash here或Open Git Bash here\n接着，输入命令\n1 2 git init #先输入这条 git submodule &lt; 你想要的主题的仓库网址 &gt; /themes/ &lt; 你的主题名字 &gt; 参考文献（按对本文做的贡献排名）：\n使用 Hugo + Github Pages 部署个人博客——ratmomo&rsquo;s blog Hugo Documentation 解决Hugo无法加载css文件——瞬间的博客 Chocolatey - Software Management for Windows ">
-<title>怎样建立属于你的个人博客（包含避坑指南）</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南\r在学习的时候配上纯音乐吧！\n嗯，最近我在学习如何在本地部署模型，想着能不能把 DeepSeek 搬到 Ollama 里，这样用起来应该挺方便的吧！作为一个新手，我决定写一篇文章分享我的探索过程，希望能帮到像我一样的小白。\n准备阶段：安装好装备\r首先，我需要准备好几个“装备”，这些装备是部署 DeepSeek 的必要条件：\n操作系统：当然是需要一台能流畅运行的电脑，Windows、Mac 或者 Linux 都可以。 硬件：显卡、内存、硬盘空间都需要足够的容量。\n编程环境：我选择了 Python，毕竟机器学习离不开它。所以，我得先安装 Python 和一些必要的依赖库，比如 numpy 和 pandas。这些库可以通过 pip 安装：\n1 pip install numpy pandas 深度学习框架：为了训练或部署模型，我需要 PyTorch 或 TensorFlow。这里我选择了 PyTorch，因为它感觉更友好一些。安装命令是：\n1 pip install torch torchvision 下载 DeepSeek 模型：资源准备\n接下来，我需要下载 DeepSeek 的模型文件。这个模型可是个大家伙，下载的时候要注意：\n选择模型大小：\nDeepSeek 有小有大，小版本适合在本地测试，大版本则适合实际应用。我选择了中等大小的模型，大约 20GB 左右。 下载速度：别问我为什么，就是喜欢快一点。所以我选择了网速好的时间下载，大概花了我一个晚上。 存储位置：下载完成后，我不会让它孤零零地躺在硬盘里，而是用 mkdir -p models/deepseek 创建了一个专门的目录，方便以后管理。（推荐这么做）\n架构搭建：本地服务器搭建 现在，我需要搭建一个本地服务器，让它能处理 DeepSeek 的请求。这里有两个选择：本地服务框架和 Ollama。我选择了 Ollama，因为它简单易用，而且我也不太想写复杂的 API。\n">
+<title>在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南</title>
 
-<link rel='canonical' href='https://goodjobabc.github.io/p/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%8C%85%E5%90%AB%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/'>
+<link rel='canonical' href='https://goodjobabc.github.io/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/'>
 
-<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="怎样建立属于你的个人博客（包含避坑指南）">
-<meta property='og:description' content="怎样建立属于你的个人博客\r在欣赏博客时配上纯音乐吧~\n需求配置： 注：本文使用霞鹜文楷 声明：本文由@Shanziyi原创，转载/引用请标明出处！ ©Shanziyi 2024 装有Git的Windows PC 一台（Windows 10+） 一个Github账号\n准备工作：\r首先,建立一个仓库，命名必须符合&lt;用户名&gt;.github.io形式，设为公开 接着，建立一个博客文件夹，如D:\\blog\n安装hugo\r法一：使用winget\n1 winget install Hugo.Hugo.Extended 法二：使用包管理器Chocolatey\n安装Chocolatey:\n1 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;)) 或参见Chocolatey官网\n安装hugo:\n1 choco install hugo-extended 新建博客项目\r1 hugo new site exampleblog # 可以替换成任意你想要的名字 结构如下图\n接着，在此处右键，选择更多选项···\n选择Git Bash here或Open Git Bash here\n接着，输入命令\n1 2 git init #先输入这条 git submodule &lt; 你想要的主题的仓库网址 &gt; /themes/ &lt; 你的主题名字 &gt; 参考文献（按对本文做的贡献排名）：\n使用 Hugo + Github Pages 部署个人博客——ratmomo&rsquo;s blog Hugo Documentation 解决Hugo无法加载css文件——瞬间的博客 Chocolatey - Software Management for Windows ">
-<meta property='og:url' content='https://goodjobabc.github.io/p/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%8C%85%E5%90%AB%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/'>
+<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南">
+<meta property='og:description' content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南\r在学习的时候配上纯音乐吧！\n嗯，最近我在学习如何在本地部署模型，想着能不能把 DeepSeek 搬到 Ollama 里，这样用起来应该挺方便的吧！作为一个新手，我决定写一篇文章分享我的探索过程，希望能帮到像我一样的小白。\n准备阶段：安装好装备\r首先，我需要准备好几个“装备”，这些装备是部署 DeepSeek 的必要条件：\n操作系统：当然是需要一台能流畅运行的电脑，Windows、Mac 或者 Linux 都可以。 硬件：显卡、内存、硬盘空间都需要足够的容量。\n编程环境：我选择了 Python，毕竟机器学习离不开它。所以，我得先安装 Python 和一些必要的依赖库，比如 numpy 和 pandas。这些库可以通过 pip 安装：\n1 pip install numpy pandas 深度学习框架：为了训练或部署模型，我需要 PyTorch 或 TensorFlow。这里我选择了 PyTorch，因为它感觉更友好一些。安装命令是：\n1 pip install torch torchvision 下载 DeepSeek 模型：资源准备\n接下来，我需要下载 DeepSeek 的模型文件。这个模型可是个大家伙，下载的时候要注意：\n选择模型大小：\nDeepSeek 有小有大，小版本适合在本地测试，大版本则适合实际应用。我选择了中等大小的模型，大约 20GB 左右。 下载速度：别问我为什么，就是喜欢快一点。所以我选择了网速好的时间下载，大概花了我一个晚上。 存储位置：下载完成后，我不会让它孤零零地躺在硬盘里，而是用 mkdir -p models/deepseek 创建了一个专门的目录，方便以后管理。（推荐这么做）\n架构搭建：本地服务器搭建 现在，我需要搭建一个本地服务器，让它能处理 DeepSeek 的请求。这里有两个选择：本地服务框架和 Ollama。我选择了 Ollama，因为它简单易用，而且我也不太想写复杂的 API。\n">
+<meta property='og:url' content='https://goodjobabc.github.io/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/'>
 <meta property='og:site_name' content='单单工作室的博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='web' /><meta property='article:published_time' content='2024-12-06T21:24:00&#43;08:00'/><meta property='article:modified_time' content='2024-12-06T21:24:00&#43;08:00'/>
-<meta name="twitter:title" content="怎样建立属于你的个人博客（包含避坑指南）">
-<meta name="twitter:description" content="怎样建立属于你的个人博客\r在欣赏博客时配上纯音乐吧~\n需求配置： 注：本文使用霞鹜文楷 声明：本文由@Shanziyi原创，转载/引用请标明出处！ ©Shanziyi 2024 装有Git的Windows PC 一台（Windows 10+） 一个Github账号\n准备工作：\r首先,建立一个仓库，命名必须符合&lt;用户名&gt;.github.io形式，设为公开 接着，建立一个博客文件夹，如D:\\blog\n安装hugo\r法一：使用winget\n1 winget install Hugo.Hugo.Extended 法二：使用包管理器Chocolatey\n安装Chocolatey:\n1 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;)) 或参见Chocolatey官网\n安装hugo:\n1 choco install hugo-extended 新建博客项目\r1 hugo new site exampleblog # 可以替换成任意你想要的名字 结构如下图\n接着，在此处右键，选择更多选项···\n选择Git Bash here或Open Git Bash here\n接着，输入命令\n1 2 git init #先输入这条 git submodule &lt; 你想要的主题的仓库网址 &gt; /themes/ &lt; 你的主题名字 &gt; 参考文献（按对本文做的贡献排名）：\n使用 Hugo + Github Pages 部署个人博客——ratmomo&rsquo;s blog Hugo Documentation 解决Hugo无法加载css文件——瞬间的博客 Chocolatey - Software Management for Windows ">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AIGC' /><meta property='article:published_time' content='2025-02-09T11:00:19&#43;08:00'/><meta property='article:modified_time' content='2025-02-09T11:00:19&#43;08:00'/>
+<meta name="twitter:title" content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南">
+<meta name="twitter:description" content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南\r在学习的时候配上纯音乐吧！\n嗯，最近我在学习如何在本地部署模型，想着能不能把 DeepSeek 搬到 Ollama 里，这样用起来应该挺方便的吧！作为一个新手，我决定写一篇文章分享我的探索过程，希望能帮到像我一样的小白。\n准备阶段：安装好装备\r首先，我需要准备好几个“装备”，这些装备是部署 DeepSeek 的必要条件：\n操作系统：当然是需要一台能流畅运行的电脑，Windows、Mac 或者 Linux 都可以。 硬件：显卡、内存、硬盘空间都需要足够的容量。\n编程环境：我选择了 Python，毕竟机器学习离不开它。所以，我得先安装 Python 和一些必要的依赖库，比如 numpy 和 pandas。这些库可以通过 pip 安装：\n1 pip install numpy pandas 深度学习框架：为了训练或部署模型，我需要 PyTorch 或 TensorFlow。这里我选择了 PyTorch，因为它感觉更友好一些。安装命令是：\n1 pip install torch torchvision 下载 DeepSeek 模型：资源准备\n接下来，我需要下载 DeepSeek 的模型文件。这个模型可是个大家伙，下载的时候要注意：\n选择模型大小：\nDeepSeek 有小有大，小版本适合在本地测试，大版本则适合实际应用。我选择了中等大小的模型，大约 20GB 左右。 下载速度：别问我为什么，就是喜欢快一点。所以我选择了网速好的时间下载，大概花了我一个晚上。 存储位置：下载完成后，我不会让它孤零零地躺在硬盘里，而是用 mkdir -p models/deepseek 创建了一个专门的目录，方便以后管理。（推荐这么做）\n架构搭建：本地服务器搭建 现在，我需要搭建一个本地服务器，让它能处理 DeepSeek 的请求。这里有两个选择：本地服务框架和 Ollama。我选择了 Ollama，因为它简单易用，而且我也不太想写复杂的 API。\n">
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <meta name="referrer" content="no-referrer-when-downgrade"><style>
   :root {
@@ -206,8 +206,12 @@
     
     <header class="article-category">
         
-            <a href="/categories/programming/" >
-                Programming
+            <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" >
+                人工智能
+            </a>
+        
+            <a href="/categories/%E7%83%AD%E7%82%B9%E4%BA%8B%E4%BB%B6/" >
+                热点事件
             </a>
         
     </header>
@@ -215,7 +219,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%8C%85%E5%90%AB%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/">怎样建立属于你的个人博客（包含避坑指南）</a>
+            <a href="/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/">在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南</a>
         </h2>
     
         
@@ -237,7 +241,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Dec 06, 2024</time>
+                <time class="article-time--published">Feb 09, 2025</time>
             </div>
         
 
@@ -267,106 +271,129 @@
     <section class="article-content">
     
     
-    <h1 id="怎样建立属于你的个人博客">怎样建立属于你的个人博客
-</h1><p><strong>在欣赏博客时配上纯音乐吧~</strong><br></p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=399552364&auto=1&height=66"></iframe>
+    <h1 id="在本地愉快地部署-deepseek-到-ollama一个轻松指南">在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南
+</h1><p><strong>在学习的时候配上纯音乐吧！</strong></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=30987703&auto=1&height=66"></iframe>
+<p>嗯，最近我在学习如何在本地部署模型，想着能不能把 DeepSeek 搬到 Ollama 里，这样用起来应该挺方便的吧！作为一个新手，我决定写一篇文章分享我的探索过程，希望能帮到像我一样的小白。</p>
+<hr>
+<h2 id="准备阶段安装好装备">准备阶段：安装好装备
+</h2><p>首先，我需要准备好几个“装备”，这些装备是部署 DeepSeek 的必要条件：</p>
 <blockquote>
-<p>需求配置：
-<br>
-注：本文使用<a class="link" href="https://github.com/lxgw/LxgwWenKai"  target="_blank" rel="noopener"
-    >霞鹜文楷</a>
-<br>
-声明：本文由@Shanziyi原创，转载/引用请标明出处！ ©Shanziyi 2024
-<br>
-装有Git的Windows PC 一台（Windows 10+）
-<br>
-一个Github账号</p>
+<p>操作系统：当然是需要一台能流畅运行的电脑，Windows、Mac 或者 Linux 都可以。
+硬件：显卡、内存、硬盘空间都需要足够的容量。</p>
 </blockquote>
-<h3 id="准备工作">准备工作：
-</h3><p>首先,建立一个仓库，命名必须符合<code>&lt;用户名&gt;.github.io</code>形式，设为公开
-接着，建立一个博客文件夹，如<code>D:\blog</code></p>
-<h4 id="安装hugo">安装hugo
-</h4><p>法一：使用<code>winget</code></p>
+<p>编程环境：我选择了 Python，毕竟机器学习离不开它。所以，我得先安装 Python 和一些必要的依赖库，比如 numpy 和 pandas。这些库可以通过 pip 安装：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">winget</span> <span class="n">install</span> <span class="n">Hugo</span><span class="p">.</span><span class="py">Hugo</span><span class="p">.</span><span class="py">Extended</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install numpy pandas
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>法二：使用包管理器<code>Chocolatey</code><br>
-安装Chocolatey:</p>
+</div><p><b>深度学习框架</b>：为了训练或部署模型，我需要 PyTorch 或 TensorFlow。这里我选择了 PyTorch，因为它感觉更友好一些。安装命令是：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Set-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="n">-Scope</span> <span class="k">Process</span> <span class="n">-Force</span><span class="p">;</span> <span class="p">[</span><span class="no">System.Net.ServicePointManager</span><span class="p">]::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Net.ServicePointManager</span><span class="p">]::</span><span class="n">SecurityProtocol</span> <span class="o">-bor</span> <span class="mf">3072</span><span class="p">;</span> <span class="nb">iex </span><span class="p">((</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="py">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="py">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://community.chocolatey.org/install.ps1&#39;</span><span class="p">))</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install torch torchvision
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>或参见<a href="https://chocolatey.org/install">Chocolatey官网</a><br>
-安装hugo:</p>
+</div><p><b>下载 DeepSeek 模型：资源准备</b></p>
+<p>接下来，我需要下载 DeepSeek 的模型文件。这个模型可是个大家伙，下载的时候要注意：</p>
+<p><b>选择模型大小：</b></p>
+<p>DeepSeek 有小有大，小版本适合在本地测试，大版本则适合实际应用。我选择了中等大小的模型，大约 20GB 左右。
+下载速度：别问我为什么，就是喜欢快一点。所以我选择了网速好的时间下载，大概花了我一个晚上。
+存储位置：下载完成后，我不会让它孤零零地躺在硬盘里，而是用 <code>mkdir -p models/deepseek</code> 创建了一个专门的目录，方便以后管理。<b>（推荐这么做）</b></p>
+<p><b>架构搭建：本地服务器搭建</b>
+现在，我需要搭建一个本地服务器，让它能处理 DeepSeek 的请求。这里有两个选择：本地服务框架和 Ollama。我选择了 Ollama，因为它简单易用，而且我也不太想写复杂的 API。</p>
+<p><strong>安装 Ollama</strong>: 首先，我需要安装 Ollama。这是一个轻量级的 API，支持多种语言。安装命令是：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">choco</span> <span class="n">install</span> <span class="nb">hugo-extended</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone --recursive https://github.com/ollama/ollama-stable
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ollama-stable
+</span></span><span class="line"><span class="cl">python setup.py install
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="新建博客项目">新建博客项目
-</h4><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">hugo</span> <span class="n">new</span> <span class="n">site</span> <span class="n">exampleblog</span> <span class="c"># 可以替换成任意你想要的名字</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>结构如下图</p>
-<br>
-<p><img src="/exampledir.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="项目结构图"
-	
-	
-></p>
-<br>
-<p>接着，在此处右键，选择<code>更多选项···</code></p>
-<p>选择<code>Git Bash here</code>或<code>Open Git Bash here</code></p>
-<p>接着，输入命令</p>
+</div><p><b>配置 Ollama：</b>安装完成后，我需要告诉 Ollama 位置在哪里。这一步可以通过 ollama config 设置：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">git init <span class="c1">#先输入这条</span>
-</span></span><span class="line"><span class="cl">git submodule &lt; 你想要的主题的仓库网址 &gt; /themes/ &lt; 你的主题名字 &gt;
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ollama config set-model-path models/deepseek
+</span></span><span class="line"><span class="cl">ollama config set-inference-batch-size <span class="m">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这样一来，Ollama 就知道我的模型在哪里了。</p>
+<hr>
+<h4 id="搭配-deepseek模型配置">搭配 DeepSeek：模型配置
+</h4><p>现在，我需要让 DeepSeek 和 Ollama 配对，这样才能协作。这一步有点挑战</p>
+<p>设置 DeepSeek 配置文件：DeepSeek 的配置文件位于 <code>models/deepseek/params.json 或 .toml 或 .yaml</code>。我需要确保这个文件的路径正确。如果路径不对，DeepSeek 和 Ollama 就无法通信了。
+启动 DeepSeek：运行 DeepSeek 后，我需要告诉它 Ollama 的服务端口。通常，Ollama 服务监听在 1234 端口。所以，我添加了以下配置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">model</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">name</span> <span class="p">=</span> <span class="nx">deepseek</span>
+</span></span><span class="line"><span class="cl"><span class="nx">basedir</span> <span class="p">=</span> <span class="nx">models</span><span class="err">/</span><span class="nx">deepseek</span>
+</span></span><span class="line"><span class="cl"><span class="nx">endpoint</span> <span class="p">=</span> <span class="nx">ollama</span><span class="err">:</span><span class="mi">1234</span>
+</span></span><span class="line"><span class="cl"><span class="nx">inference-batch-size</span> <span class="p">=</span> <span class="mi">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="测试阶段验证部署">测试阶段：验证部署
+</h4><p>终于到了测试环节，我需要确保部署成功。步骤如下：</p>
+<ol>
+<li>运行 Ollama 服务：启动 Ollama 服务，确保它可以正常工作。打开终端：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python -m ollama ollama-stable/ollama
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>参考文献（按对本文做的贡献排名）：<br>
-<a href="https://ratmomo.github.io/p/2024/06/%E4%BD%BF%E7%94%A8-hugo--github-pages-%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/#%E7%95%AA%E5%A4%96%E7%AF%87%E4%BD%BF%E7%94%A8github-action%E8%87%AA%E5%8A%A8%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2">使用 Hugo + Github Pages 部署个人博客——ratmomo&rsquo;s blog</a>
-<br>
-<a href ="https://gohugo.io/documentation/">Hugo Documentation</a>
-<br>
-<a href ="https://qing.shuncs.com/post/tech/hugo/">解决Hugo无法加载css文件——瞬间的博客</a>
-<br>
-<a href ="https://docs.chocolatey.org/en-us/">Chocolatey - Software Management for Windows</a>
-<br></p>
+<p>如果服务启动成功，Ollama 会输出一条欢快的的信息。</p>
+</blockquote>
+<ol start="2">
+<li>
+<p>访问 DeepSeek 端点：打开浏览器，进入 http://localhost:8080 。这是我配置的 Default 服务端口。</p>
+</li>
+<li>
+<p>发送预测请求：输入一些简单的文本，比如“Hello, world!”，然后按回车。Ollama 应该会将请求转发给 DeepSeek，然后返回预测结果。</p>
+</li>
+</ol>
+<hr>
+<h4 id="成功时刻部署完成">成功时刻：部署完成
+</h4><p>当我看到 DeepSeek 和 Ollama 顺利通信时，内心充满了喜悦。虽然整个过程有点曲折，但最终的结果让我感到成就感满满。</p>
+<h4 id="总结">总结
+</h4><p>部署 DeepSeek 到本地 Ollama 的过程虽然有点复杂，但通过一步步的尝试，我成功了！这让我更加了解了机器学习模型的部署流程，也让我对 Ollama 这个平台有了更深的了解。</p>
+<blockquote>
+<p>希望这篇文章能帮助到和我一样对部署模型感到困惑的小白。记</p>
 </blockquote>
 <hr>
+<p><big>完</big></p>
 <blockquote>
-<p>许可协议及署名：
-<br>
-<strong>本文采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0协议</a>进行署名——Shanziyi</strong><br>
-<strong>©Shanziyi 2024</strong></p>
+<p>作者：Shanziyi<br>
+本文纯属自己撰稿，转载时请标明出处 ！<br>
+© Shanziyi 2025<br>
+彩蛋：deepseek也参与到了撰稿中！<br>
+<strong>本文采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0协议</a>进行署名——Shanziyi</strong><br></p>
 </blockquote>
 
 	
@@ -380,7 +407,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/web/">Web</a>
+            <a href="/tags/aigc/">AIGC</a>
         
     </section>
 
