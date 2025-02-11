@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on 单单工作室的博客</title>
-        <link>https://goodjobabc.github.io/categories/</link>
+        <link>http://localhost:1313/categories/</link>
         <description>Recent content in Categories on 单单工作室的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ShanShanStdio</copyright>
-        <lastBuildDate>Tue, 11 Feb 2025 09:42:30 +0800</lastBuildDate><atom:link href="https://goodjobabc.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 11 Feb 2025 09:42:30 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>热点事件</title>
-        <link>https://goodjobabc.github.io/categories/%E7%83%AD%E7%82%B9%E4%BA%8B%E4%BB%B6/</link>
+        <link>http://localhost:1313/categories/%E7%83%AD%E7%82%B9%E4%BA%8B%E4%BB%B6/</link>
         <pubDate>Tue, 11 Feb 2025 09:42:30 +0800</pubDate>
         
-        <guid>https://goodjobabc.github.io/categories/%E7%83%AD%E7%82%B9%E4%BA%8B%E4%BB%B6/</guid>
+        <guid>http://localhost:1313/categories/%E7%83%AD%E7%82%B9%E4%BA%8B%E4%BB%B6/</guid>
         <description></description>
         </item>
         <item>
         <title>人工智能</title>
-        <link>https://goodjobabc.github.io/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</link>
+        <link>http://localhost:1313/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</link>
         <pubDate>Tue, 11 Feb 2025 09:42:30 +0800</pubDate>
         
-        <guid>https://goodjobabc.github.io/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</guid>
+        <guid>http://localhost:1313/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</guid>
         <description></description>
         </item>
         <item>
         <title>关于本站···</title>
-        <link>https://goodjobabc.github.io/categories/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/</link>
+        <link>http://localhost:1313/categories/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/</link>
         <pubDate>Sun, 22 Dec 2024 21:24:00 +0800</pubDate>
         
-        <guid>https://goodjobabc.github.io/categories/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/</guid>
+        <guid>http://localhost:1313/categories/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/</guid>
         <description></description>
         </item>
         <item>
         <title>Programming</title>
-        <link>https://goodjobabc.github.io/categories/programming/</link>
+        <link>http://localhost:1313/categories/programming/</link>
         <pubDate>Fri, 06 Dec 2024 21:24:00 +0800</pubDate>
         
-        <guid>https://goodjobabc.github.io/categories/programming/</guid>
+        <guid>http://localhost:1313/categories/programming/</guid>
         <description></description>
         </item>
         <item>
         <title>Infomation</title>
-        <link>https://goodjobabc.github.io/categories/infomation/</link>
+        <link>http://localhost:1313/categories/infomation/</link>
         <pubDate>Fri, 06 Dec 2024 21:14:23 +0800</pubDate>
         
-        <guid>https://goodjobabc.github.io/categories/infomation/</guid>
+        <guid>http://localhost:1313/categories/infomation/</guid>
         <description></description>
         </item>
         

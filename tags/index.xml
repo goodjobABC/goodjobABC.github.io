@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tags on 单单工作室的博客</title>
-        <link>https://goodjobabc.github.io/tags/</link>
+        <link>http://localhost:1313/tags/</link>
         <description>Recent content in Tags on 单单工作室的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ShanShanStdio</copyright>
-        <lastBuildDate>Tue, 11 Feb 2025 09:42:30 +0800</lastBuildDate><atom:link href="https://goodjobabc.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 11 Feb 2025 09:42:30 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>AIGC</title>
-        <link>https://goodjobabc.github.io/tags/aigc/</link>
+        <link>http://localhost:1313/tags/aigc/</link>
         <pubDate>Tue, 11 Feb 2025 09:42:30 +0800</pubDate>
         
-        <guid>https://goodjobabc.github.io/tags/aigc/</guid>
+        <guid>http://localhost:1313/tags/aigc/</guid>
         <description></description>
         </item>
         <item>
         <title>FAQ</title>
-        <link>https://goodjobabc.github.io/tags/faq/</link>
+        <link>http://localhost:1313/tags/faq/</link>
         <pubDate>Tue, 11 Feb 2025 09:42:30 +0800</pubDate>
         
-        <guid>https://goodjobabc.github.io/tags/faq/</guid>
+        <guid>http://localhost:1313/tags/faq/</guid>
         <description></description>
         </item>
         <item>
         <title>Web</title>
-        <link>https://goodjobabc.github.io/tags/web/</link>
+        <link>http://localhost:1313/tags/web/</link>
         <pubDate>Sun, 22 Dec 2024 21:24:00 +0800</pubDate>
         
-        <guid>https://goodjobabc.github.io/tags/web/</guid>
+        <guid>http://localhost:1313/tags/web/</guid>
         <description></description>
         </item>
         

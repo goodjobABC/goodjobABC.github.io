@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>单单工作室的博客</title>
-        <link>https://goodjobabc.github.io/</link>
+        <link>http://localhost:1313/</link>
         <description>Recent content on 单单工作室的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ShanShanStdio</copyright>
-        <lastBuildDate>Tue, 11 Feb 2025 09:42:30 +0800</lastBuildDate><atom:link href="https://goodjobabc.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 11 Feb 2025 09:42:30 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在将 DeepSeek 部署到 Ollama 的过程中遇到的问题（FAQ）</title>
-        <link>https://goodjobabc.github.io/p/%E5%9C%A8%E5%B0%86-deepseek-%E9%83%A8%E7%BD%B2%E5%88%B0-ollama-%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98faq/</link>
+        <link>http://localhost:1313/p/%E5%9C%A8%E5%B0%86-deepseek-%E9%83%A8%E7%BD%B2%E5%88%B0-ollama-%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98faq/</link>
         <pubDate>Tue, 11 Feb 2025 09:42:30 +0800</pubDate>
         
-        <guid>https://goodjobabc.github.io/p/%E5%9C%A8%E5%B0%86-deepseek-%E9%83%A8%E7%BD%B2%E5%88%B0-ollama-%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98faq/</guid>
+        <guid>http://localhost:1313/p/%E5%9C%A8%E5%B0%86-deepseek-%E9%83%A8%E7%BD%B2%E5%88%B0-ollama-%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98faq/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;观前提示：&lt;br&gt;
 本篇问答相对专业一些，如果仅是自己在本地尝试运行ollma时的基本问题，请期待下一篇问答文章。&lt;/p&gt;
@@ -206,10 +206,10 @@
         </item>
         <item>
         <title>在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南</title>
-        <link>https://goodjobabc.github.io/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/</link>
+        <link>http://localhost:1313/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/</link>
         <pubDate>Sun, 09 Feb 2025 11:00:19 +0800</pubDate>
         
-        <guid>https://goodjobabc.github.io/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/</guid>
+        <guid>http://localhost:1313/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/</guid>
         <description>&lt;h1 id=&#34;在本地愉快地部署-deepseek-到-ollama一个轻松指南&#34;&gt;在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;在学习的时候配上纯音乐吧！&lt;/strong&gt;&lt;/p&gt;
 &lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=30987703&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;
@@ -338,10 +338,10 @@
         </item>
         <item>
         <title>怎样建立属于你的个人博客（包含避坑指南）</title>
-        <link>https://goodjobabc.github.io/congratulations/</link>
+        <link>http://localhost:1313/congratulations/</link>
         <pubDate>Sun, 22 Dec 2024 21:24:00 +0800</pubDate>
         
-        <guid>https://goodjobabc.github.io/congratulations/</guid>
+        <guid>http://localhost:1313/congratulations/</guid>
         <description>&lt;h1 id=&#34;祝贺本站被谷歌收编&#34;&gt;祝贺本站被谷歌收编！
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;2024.12.9，本站正式被谷歌SEO收录！！！以后就可以在谷歌搜说上搜到本站了！&lt;/strong&gt;&lt;br&gt;
@@ -352,10 +352,10 @@
         </item>
         <item>
         <title>Congratulations</title>
-        <link>https://goodjobabc.github.io/p/congratulations/</link>
+        <link>http://localhost:1313/p/congratulations/</link>
         <pubDate>Sun, 22 Dec 2024 15:50:06 +0800</pubDate>
         
-        <guid>https://goodjobabc.github.io/p/congratulations/</guid>
+        <guid>http://localhost:1313/p/congratulations/</guid>
         <description>&lt;h1 id=&#34;祝贺本站被谷歌收编&#34;&gt;祝贺本站被谷歌收编！
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;2024.12.9，本站正式被谷歌SEO收录！！！以后就可以在谷歌搜索上搜到本站了！&lt;/strong&gt;&lt;br&gt;
@@ -366,10 +366,10 @@
         </item>
         <item>
         <title>怎样建立属于你的个人博客（包含避坑指南）</title>
-        <link>https://goodjobabc.github.io/p/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%8C%85%E5%90%AB%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/</link>
+        <link>http://localhost:1313/p/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%8C%85%E5%90%AB%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/</link>
         <pubDate>Fri, 06 Dec 2024 21:24:00 +0800</pubDate>
         
-        <guid>https://goodjobabc.github.io/p/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%8C%85%E5%90%AB%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/</guid>
+        <guid>http://localhost:1313/p/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%8C%85%E5%90%AB%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/</guid>
         <description>&lt;h1 id=&#34;怎样建立属于你的个人博客&#34;&gt;怎样建立属于你的个人博客
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;在欣赏博客时配上纯音乐吧~&lt;/strong&gt;&lt;br&gt;&lt;/p&gt;
 &lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=399552364&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;
@@ -475,10 +475,10 @@
         </item>
         <item>
         <title>介绍</title>
-        <link>https://goodjobabc.github.io/p/%E4%BB%8B%E7%BB%8D/</link>
+        <link>http://localhost:1313/p/%E4%BB%8B%E7%BB%8D/</link>
         <pubDate>Fri, 06 Dec 2024 21:14:23 +0800</pubDate>
         
-        <guid>https://goodjobabc.github.io/p/%E4%BB%8B%E7%BB%8D/</guid>
+        <guid>http://localhost:1313/p/%E4%BB%8B%E7%BB%8D/</guid>
         <description>&lt;h1 id=&#34;单单工作室的博客&#34;&gt;单单工作室的博客
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;以后关于单单工作室的博客都会在这发布
