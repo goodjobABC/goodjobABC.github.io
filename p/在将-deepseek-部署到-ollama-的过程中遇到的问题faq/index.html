@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南\r在学习的时候配上纯音乐吧！\n嗯，最近我在学习如何在本地部署模型，想着能不能把 DeepSeek 搬到 Ollama 里，这样用起来应该挺方便的吧！作为一个新手，我决定写一篇文章分享我的探索过程，希望能帮到像我一样的小白。\n准备阶段：安装好装备\r首先，我需要准备好几个“装备”，这些装备是部署 DeepSeek 的必要条件：\n操作系统：当然是需要一台能流畅运行的电脑，Windows、Mac 或者 Linux 都可以。 硬件：显卡、内存、硬盘空间都需要足够的容量。\n编程环境：我选择了 Python，毕竟机器学习离不开它。所以，我得先安装 Python 和一些必要的依赖库，比如 numpy 和 pandas。这些库可以通过 pip 安装：\n1 pip install numpy pandas 深度学习框架：为了训练或部署模型，我需要 PyTorch 或 TensorFlow。这里我选择了 PyTorch，因为它感觉更友好一些。安装命令是：\n1 pip install torch torchvision 下载 DeepSeek 模型：资源准备\n接下来，我需要下载 DeepSeek 的模型文件。这个模型可是个大家伙，下载的时候要注意：\n选择模型大小：\nDeepSeek 有小有大，小版本适合在本地测试，大版本则适合实际应用。我选择了中等大小的模型，大约 20GB 左右。 下载速度：别问我为什么，就是喜欢快一点。所以我选择了网速好的时间下载，大概花了我一个晚上。 存储位置：下载完成后，我不会让它孤零零地躺在硬盘里，而是用 mkdir -p models/deepseek 创建了一个专门的目录，方便以后管理。（推荐这么做）\n架构搭建：本地服务器搭建 现在，我需要搭建一个本地服务器，让它能处理 DeepSeek 的请求。这里有两个选择：本地服务框架和 Ollama。我选择了 Ollama，因为它简单易用，而且我也不太想写复杂的 API。\n">
-<title>在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 观前提示：\n本篇问答相对专业一些，如果仅是自己在本地尝试运行ollma时的基本问题，请期待下一篇问答文章。\n在问答的时候配上轻音乐吧！\n问题：1. DeepSeek 模型如何转换为 Ollama 相容的格式？\r答案：\r要将 DeepSeek 模型部署到 Ollama，需要先将模型转换为 Ollama 支持的格式。以下是具体步骤：\n选择适当的模型大小： 根据 Ollama 的架构，选择适合的模型大小（如 7B、13B 等）。\n大模型可能需要更多内存和计算资源。\n模型转换工具： 使用工具如 llama.cpp 或其他开源工具将 DeepSeek 模型转换为 Ollama 相容的格式。\n例如：\n1 llama-convert --source deepseek --target ollama --n 4 --fp16 生成的文件（如 ollama.f16）是 Ollama 运行所需的参数文件。 问题：2. 为什么转换后的模型在 Ollama 中加载失败？\r答案：\r如果转换后的模型在 Ollama 中加载失败，可能有以下原因：\n模型转换错误： 检查转换工具的日志，确保转换过程没有错误。 确保 DeepSeek 模型路径正确。 依赖项配置： 确保所有依赖项（如 llama.cpp、llama-convert 等）已正确安装并配置。 检查 Makefile 配置，确保环境变量正确设置（如 O_LLLMABackend=1）。 缺少必要的头文件： 确保 o2c 头文件路径正确，例如： 1 #include &lt;o2c/o2c.h&gt; 问题：3. 如何配置 Ollama 实例以支持多 GPU？\r答案：\r本问题演示环境为linux系统\n">
+<title>在将 DeepSeek 部署到 Ollama 的过程中遇到的问题（FAQ）</title>
 
-<link rel='canonical' href='https://goodjobabc.github.io/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/'>
+<link rel='canonical' href='https://goodjobabc.github.io/p/%E5%9C%A8%E5%B0%86-deepseek-%E9%83%A8%E7%BD%B2%E5%88%B0-ollama-%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98faq/'>
 
-<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南">
-<meta property='og:description' content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南\r在学习的时候配上纯音乐吧！\n嗯，最近我在学习如何在本地部署模型，想着能不能把 DeepSeek 搬到 Ollama 里，这样用起来应该挺方便的吧！作为一个新手，我决定写一篇文章分享我的探索过程，希望能帮到像我一样的小白。\n准备阶段：安装好装备\r首先，我需要准备好几个“装备”，这些装备是部署 DeepSeek 的必要条件：\n操作系统：当然是需要一台能流畅运行的电脑，Windows、Mac 或者 Linux 都可以。 硬件：显卡、内存、硬盘空间都需要足够的容量。\n编程环境：我选择了 Python，毕竟机器学习离不开它。所以，我得先安装 Python 和一些必要的依赖库，比如 numpy 和 pandas。这些库可以通过 pip 安装：\n1 pip install numpy pandas 深度学习框架：为了训练或部署模型，我需要 PyTorch 或 TensorFlow。这里我选择了 PyTorch，因为它感觉更友好一些。安装命令是：\n1 pip install torch torchvision 下载 DeepSeek 模型：资源准备\n接下来，我需要下载 DeepSeek 的模型文件。这个模型可是个大家伙，下载的时候要注意：\n选择模型大小：\nDeepSeek 有小有大，小版本适合在本地测试，大版本则适合实际应用。我选择了中等大小的模型，大约 20GB 左右。 下载速度：别问我为什么，就是喜欢快一点。所以我选择了网速好的时间下载，大概花了我一个晚上。 存储位置：下载完成后，我不会让它孤零零地躺在硬盘里，而是用 mkdir -p models/deepseek 创建了一个专门的目录，方便以后管理。（推荐这么做）\n架构搭建：本地服务器搭建 现在，我需要搭建一个本地服务器，让它能处理 DeepSeek 的请求。这里有两个选择：本地服务框架和 Ollama。我选择了 Ollama，因为它简单易用，而且我也不太想写复杂的 API。\n">
-<meta property='og:url' content='https://goodjobabc.github.io/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/'>
+<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="在将 DeepSeek 部署到 Ollama 的过程中遇到的问题（FAQ）">
+<meta property='og:description' content=" 观前提示：\n本篇问答相对专业一些，如果仅是自己在本地尝试运行ollma时的基本问题，请期待下一篇问答文章。\n在问答的时候配上轻音乐吧！\n问题：1. DeepSeek 模型如何转换为 Ollama 相容的格式？\r答案：\r要将 DeepSeek 模型部署到 Ollama，需要先将模型转换为 Ollama 支持的格式。以下是具体步骤：\n选择适当的模型大小： 根据 Ollama 的架构，选择适合的模型大小（如 7B、13B 等）。\n大模型可能需要更多内存和计算资源。\n模型转换工具： 使用工具如 llama.cpp 或其他开源工具将 DeepSeek 模型转换为 Ollama 相容的格式。\n例如：\n1 llama-convert --source deepseek --target ollama --n 4 --fp16 生成的文件（如 ollama.f16）是 Ollama 运行所需的参数文件。 问题：2. 为什么转换后的模型在 Ollama 中加载失败？\r答案：\r如果转换后的模型在 Ollama 中加载失败，可能有以下原因：\n模型转换错误： 检查转换工具的日志，确保转换过程没有错误。 确保 DeepSeek 模型路径正确。 依赖项配置： 确保所有依赖项（如 llama.cpp、llama-convert 等）已正确安装并配置。 检查 Makefile 配置，确保环境变量正确设置（如 O_LLLMABackend=1）。 缺少必要的头文件： 确保 o2c 头文件路径正确，例如： 1 #include &lt;o2c/o2c.h&gt; 问题：3. 如何配置 Ollama 实例以支持多 GPU？\r答案：\r本问题演示环境为linux系统\n">
+<meta property='og:url' content='https://goodjobabc.github.io/p/%E5%9C%A8%E5%B0%86-deepseek-%E9%83%A8%E7%BD%B2%E5%88%B0-ollama-%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98faq/'>
 <meta property='og:site_name' content='单单工作室的博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AIGC' /><meta property='article:published_time' content='2025-02-09T11:00:19&#43;08:00'/><meta property='article:modified_time' content='2025-02-09T11:00:19&#43;08:00'/>
-<meta name="twitter:title" content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南">
-<meta name="twitter:description" content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南\r在学习的时候配上纯音乐吧！\n嗯，最近我在学习如何在本地部署模型，想着能不能把 DeepSeek 搬到 Ollama 里，这样用起来应该挺方便的吧！作为一个新手，我决定写一篇文章分享我的探索过程，希望能帮到像我一样的小白。\n准备阶段：安装好装备\r首先，我需要准备好几个“装备”，这些装备是部署 DeepSeek 的必要条件：\n操作系统：当然是需要一台能流畅运行的电脑，Windows、Mac 或者 Linux 都可以。 硬件：显卡、内存、硬盘空间都需要足够的容量。\n编程环境：我选择了 Python，毕竟机器学习离不开它。所以，我得先安装 Python 和一些必要的依赖库，比如 numpy 和 pandas。这些库可以通过 pip 安装：\n1 pip install numpy pandas 深度学习框架：为了训练或部署模型，我需要 PyTorch 或 TensorFlow。这里我选择了 PyTorch，因为它感觉更友好一些。安装命令是：\n1 pip install torch torchvision 下载 DeepSeek 模型：资源准备\n接下来，我需要下载 DeepSeek 的模型文件。这个模型可是个大家伙，下载的时候要注意：\n选择模型大小：\nDeepSeek 有小有大，小版本适合在本地测试，大版本则适合实际应用。我选择了中等大小的模型，大约 20GB 左右。 下载速度：别问我为什么，就是喜欢快一点。所以我选择了网速好的时间下载，大概花了我一个晚上。 存储位置：下载完成后，我不会让它孤零零地躺在硬盘里，而是用 mkdir -p models/deepseek 创建了一个专门的目录，方便以后管理。（推荐这么做）\n架构搭建：本地服务器搭建 现在，我需要搭建一个本地服务器，让它能处理 DeepSeek 的请求。这里有两个选择：本地服务框架和 Ollama。我选择了 Ollama，因为它简单易用，而且我也不太想写复杂的 API。\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AIGC' /><meta property='article:tag' content='FAQ' /><meta property='article:published_time' content='2025-02-11T09:42:30&#43;08:00'/><meta property='article:modified_time' content='2025-02-11T09:42:30&#43;08:00'/>
+<meta name="twitter:title" content="在将 DeepSeek 部署到 Ollama 的过程中遇到的问题（FAQ）">
+<meta name="twitter:description" content=" 观前提示：\n本篇问答相对专业一些，如果仅是自己在本地尝试运行ollma时的基本问题，请期待下一篇问答文章。\n在问答的时候配上轻音乐吧！\n问题：1. DeepSeek 模型如何转换为 Ollama 相容的格式？\r答案：\r要将 DeepSeek 模型部署到 Ollama，需要先将模型转换为 Ollama 支持的格式。以下是具体步骤：\n选择适当的模型大小： 根据 Ollama 的架构，选择适合的模型大小（如 7B、13B 等）。\n大模型可能需要更多内存和计算资源。\n模型转换工具： 使用工具如 llama.cpp 或其他开源工具将 DeepSeek 模型转换为 Ollama 相容的格式。\n例如：\n1 llama-convert --source deepseek --target ollama --n 4 --fp16 生成的文件（如 ollama.f16）是 Ollama 运行所需的参数文件。 问题：2. 为什么转换后的模型在 Ollama 中加载失败？\r答案：\r如果转换后的模型在 Ollama 中加载失败，可能有以下原因：\n模型转换错误： 检查转换工具的日志，确保转换过程没有错误。 确保 DeepSeek 模型路径正确。 依赖项配置： 确保所有依赖项（如 llama.cpp、llama-convert 等）已正确安装并配置。 检查 Makefile 配置，确保环境变量正确设置（如 O_LLLMABackend=1）。 缺少必要的头文件： 确保 o2c 头文件路径正确，例如： 1 #include &lt;o2c/o2c.h&gt; 问题：3. 如何配置 Ollama 实例以支持多 GPU？\r答案：\r本问题演示环境为linux系统\n">
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <meta name="referrer" content="no-referrer-when-downgrade"><style>
   :root {
@@ -219,7 +219,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/">在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南</a>
+            <a href="/p/%E5%9C%A8%E5%B0%86-deepseek-%E9%83%A8%E7%BD%B2%E5%88%B0-ollama-%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98faq/">在将 DeepSeek 部署到 Ollama 的过程中遇到的问题（FAQ）</a>
         </h2>
     
         
@@ -241,7 +241,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Feb 09, 2025</time>
+                <time class="article-time--published">Feb 11, 2025</time>
             </div>
         
 
@@ -256,7 +256,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -271,128 +271,193 @@
     <section class="article-content">
     
     
-    <h1 id="在本地愉快地部署-deepseek-到-ollama一个轻松指南">在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南
-</h1><p><strong>在学习的时候配上纯音乐吧！</strong></p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=30987703&auto=1&height=66"></iframe>
-<p>嗯，最近我在学习如何在本地部署模型，想着能不能把 DeepSeek 搬到 Ollama 里，这样用起来应该挺方便的吧！作为一个新手，我决定写一篇文章分享我的探索过程，希望能帮到像我一样的小白。</p>
-<hr>
-<h2 id="准备阶段安装好装备">准备阶段：安装好装备
-</h2><p>首先，我需要准备好几个“装备”，这些装备是部署 DeepSeek 的必要条件：</p>
-<blockquote>
-<p>操作系统：当然是需要一台能流畅运行的电脑，Windows、Mac 或者 Linux 都可以。
-硬件：显卡、内存、硬盘空间都需要足够的容量。</p>
+    <blockquote>
+<p>观前提示：<br>
+本篇问答相对专业一些，如果仅是自己在本地尝试运行ollma时的基本问题，请期待下一篇问答文章。</p>
 </blockquote>
-<p>编程环境：我选择了 Python，毕竟机器学习离不开它。所以，我得先安装 Python 和一些必要的依赖库，比如 numpy 和 pandas。这些库可以通过 pip 安装：</p>
+<p><strong>在问答的时候配上轻音乐吧！</strong></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=41659405&auto=1&height=66"></iframe>
+<h4 id="问题1-deepseek-模型如何转换为-ollama-相容的格式">问题：1. DeepSeek 模型如何转换为 Ollama 相容的格式？
+</h4><h4 id="答案">答案：
+</h4><p>要将 DeepSeek 模型部署到 Ollama，需要先将模型转换为 Ollama 支持的格式。以下是具体步骤：</p>
+<ol>
+<li>选择适当的模型大小：</li>
+</ol>
+<ul>
+<li>
+<p>根据 Ollama 的架构，选择适合的模型大小（如 7B、13B 等）。</p>
+</li>
+<li>
+<p>大模型可能需要更多内存和计算资源。</p>
+</li>
+</ul>
+<ol start="2">
+<li>模型转换工具：</li>
+</ol>
+<ul>
+<li>
+<p>使用工具如 llama.cpp 或其他开源工具将 DeepSeek 模型转换为 Ollama 相容的格式。</p>
+</li>
+<li>
+<p>例如：</p>
+</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install numpy pandas
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">llama-convert --source deepseek --target ollama --n <span class="m">4</span> --fp16
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><b>深度学习框架</b>：为了训练或部署模型，我需要 PyTorch 或 TensorFlow。这里我选择了 PyTorch，因为它感觉更友好一些。安装命令是：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install torch torchvision
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><b>下载 DeepSeek 模型：资源准备</b></p>
-<p>接下来，我需要下载 DeepSeek 的模型文件。这个模型可是个大家伙，下载的时候要注意：</p>
-<p><b>选择模型大小：</b></p>
-<p>DeepSeek 有小有大，小版本适合在本地测试，大版本则适合实际应用。我选择了中等大小的模型，大约 20GB 左右。
-下载速度：别问我为什么，就是喜欢快一点。所以我选择了网速好的时间下载，大概花了我一个晚上。
-存储位置：下载完成后，我不会让它孤零零地躺在硬盘里，而是用 <code>mkdir -p models/deepseek</code> 创建了一个专门的目录，方便以后管理。<b>（推荐这么做）</b></p>
-<p><b>架构搭建：本地服务器搭建</b>
-现在，我需要搭建一个本地服务器，让它能处理 DeepSeek 的请求。这里有两个选择：本地服务框架和 Ollama。我选择了 Ollama，因为它简单易用，而且我也不太想写复杂的 API。</p>
-<p><strong>安装 Ollama</strong>: 首先，我需要安装 Ollama。这是一个轻量级的 API，支持多种语言。安装命令是：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone --recursive https://github.com/ollama/ollama-stable
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ollama-stable
-</span></span><span class="line"><span class="cl">python setup.py install
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><b>配置 Ollama：</b>安装完成后，我需要告诉 Ollama 位置在哪里。这一步可以通过 ollama config 设置：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ollama config set-model-path models/deepseek
-</span></span><span class="line"><span class="cl">ollama config set-inference-batch-size <span class="m">1</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这样一来，Ollama 就知道我的模型在哪里了。</p>
+</div><ul>
+<li>生成的文件（如 ollama.f16）是 Ollama 运行所需的参数文件。</li>
+</ul>
 <hr>
-<h4 id="搭配-deepseek模型配置">搭配 DeepSeek：模型配置
-</h4><p>现在，我需要让 DeepSeek 和 Ollama 配对，这样才能协作。这一步有点挑战</p>
-<p>设置 DeepSeek 配置文件：DeepSeek 的配置文件位于 <code>models/deepseek/params.json 或 .toml 或 .yaml</code>。我需要确保这个文件的路径正确。如果路径不对，DeepSeek 和 Ollama 就无法通信了。
-启动 DeepSeek：运行 DeepSeek 后，我需要告诉它 Ollama 的服务端口。通常，Ollama 服务监听在 1234 端口。所以，我添加了以下配置：</p>
+<h4 id="问题2-为什么转换后的模型在-ollama-中加载失败">问题：2. 为什么转换后的模型在 Ollama 中加载失败？
+</h4><h4 id="答案-1">答案：
+</h4><p>如果转换后的模型在 Ollama 中加载失败，可能有以下原因：</p>
+<ol>
+<li>模型转换错误：</li>
+</ol>
+<ul>
+<li>检查转换工具的日志，确保转换过程没有错误。</li>
+<li>确保 DeepSeek 模型路径正确。</li>
+</ul>
+<ol start="2">
+<li>依赖项配置：</li>
+</ol>
+<ul>
+<li>确保所有依赖项（如 llama.cpp、llama-convert 等）已正确安装并配置。</li>
+<li>检查 Makefile 配置，确保环境变量正确设置（如 O_LLLMABackend=1）。</li>
+</ul>
+<ol start="3">
+<li>缺少必要的头文件：</li>
+</ol>
+<ul>
+<li>确保 o2c 头文件路径正确，例如：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;o2c/o2c.h&gt;</span><span class="cp">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h4 id="问题3-如何配置-ollama-实例以支持多-gpu">问题：3. 如何配置 Ollama 实例以支持多 GPU？
+</h4><h4 id="答案-2">答案：
+</h4><blockquote>
+<p>本问题演示环境为linux系统</p>
+</blockquote>
+<p>要使 Ollama 支持多 GPU，需配置 Ollama 实例为多 GPU 模式：</p>
+<ol>
+<li>实例选择：</li>
+</ol>
+<ul>
+<li>使用支持多 GPU 的实例类型（如 AWS EC2 多 GPU 实例、Azure VM 多 GPU 实例）。</li>
+</ul>
+<ol start="2">
+<li>配置文件：</li>
+</ol>
+<ul>
+<li>在 <code>/root/.ollama/config/params.json</code> 中设置多 GPU 配置：</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">model</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="nx">name</span> <span class="p">=</span> <span class="nx">deepseek</span>
-</span></span><span class="line"><span class="cl"><span class="nx">basedir</span> <span class="p">=</span> <span class="nx">models</span><span class="err">/</span><span class="nx">deepseek</span>
-</span></span><span class="line"><span class="cl"><span class="nx">endpoint</span> <span class="p">=</span> <span class="nx">ollama</span><span class="err">:</span><span class="mi">1234</span>
-</span></span><span class="line"><span class="cl"><span class="nx">inference-batch-size</span> <span class="p">=</span> <span class="mi">1</span>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;num GPUs&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;multi-GPU backend&#34;</span><span class="p">:</span> <span class="s2">&#34;cudai&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="测试阶段验证部署">测试阶段：验证部署
-</h4><p>终于到了测试环节，我需要确保部署成功。步骤如下：</p>
-<ol>
-<li>运行 Ollama 服务：启动 Ollama 服务，确保它可以正常工作。打开终端：</li>
+</div><ol start="3">
+<li>环境变量：</li>
 </ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python -m ollama ollama-stable/ollama
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
-<p>如果服务启动成功，Ollama 会输出一条欢快的的信息。</p>
-</blockquote>
-<ol start="2">
-<li>
-<p>访问 DeepSeek 端点：打开浏览器，进入 http://localhost:8080 。这是我配置的 Default 服务端口。</p>
-</li>
-<li>
-<p>发送预测请求：输入一些简单的文本，比如“Hello, world!”，然后按回车。Ollama 应该会将请求转发给 DeepSeek，然后返回预测结果。</p>
-</li>
+<ul>
+<li>置 LD_LIBRARY_PATH 包含 GPU 驱动程序（如 CUDA 兼容的驱动）。</li>
+</ul>
+<ol start="4">
+<li>验证配置：</li>
 </ol>
+<ul>
+<li>运行<code>ollama --version</code>，确认支持多 GPU。</li>
+</ul>
 <hr>
-<h4 id="成功时刻部署完成">成功时刻：部署完成
-</h4><p>当我看到 DeepSeek 和 Ollama 顺利通信时，内心充满了喜悦。虽然整个过程有点曲折，但最终的结果让我感到成就感满满。</p>
-<h4 id="总结">总结
-</h4><p>部署 DeepSeek 到本地 Ollama 的过程虽然有点复杂，但通过一步步的尝试，我成功了！这让我更加了解了机器学习模型的部署流程，也让我对 Ollama 这个平台有了更深的了解。</p>
-<blockquote>
-<p>希望这篇文章能帮助到和我一样对部署模型感到困惑的小白。</p>
+<h4 id="问题4-如何将-deepseek-模型部署到-ollama-并连接到云平台">问题：4. 如何将 DeepSeek 模型部署到 Ollama 并连接到云平台？
+</h4><h4 id="答案-3">答案：
+</h4><p>部署 DeepSeek 模型到 Ollama 并连接到云平台的步骤如下：</p>
+<ol>
+<li>部署 Ollama：</li>
+</ol>
+<ul>
+<li>使用云平台（如 AWS、GCP、Azure）部署 Ollama 实例。</li>
+<li>指定 GPU 实例以支持 DeepSeek 模型的计算需求。</li>
+</ul>
+<ol start="2">
+<li>模型转换和加载：</li>
+</ol>
+<ul>
+<li>使用工具将 DeepSeek 模型转换为 Ollama 相容格式。</li>
+<li>在 Ollama 实例中加载转换后的模型。</li>
+</ul>
+<ol start="3">
+<li>连接到云平台：</li>
+</ol>
+<ul>
+<li>使用云平台提供的 SDK（如 AWS SDK、GCP SDK）连接到 Ollama 实例。</li>
+<li>发送推理请求，运行 DeepSeek 模型。</li>
+</ul>
+<hr>
+<h4 id="问题5-在-ollama-中运行-deepseek-模型时遇到性能问题该如何优化">问题：5. 在 Ollama 中运行 DeepSeek 模型时遇到性能问题，该如何优化？
+</h4><h4 id="答案-4">答案：
+</h4><p>如果在 Ollama 中运行 DeepSeek 模型时遇到性能问题，可以尝试以下优化方法：</p>
+<ol>
+<li>模型量化：</li>
+</ol>
+<ul>
+<li>使用量化技术（如 FP16 或 INT8）减少模型大小和内存占用。</li>
+<li>化转换工具的量化设置。</li>
+</ul>
+<ol start="2">
+<li>实例配置：</li>
+</ol>
+<ul>
+<li>根据模型性能需求，选择适当的实例大小（如 T4、V100 等 GPU）。</li>
+<li>调整多 GPU 实例的负载均衡策略。</li>
+</ul>
+<ol start="3">
+<li>优化代码：</li>
+</ol>
+<ul>
+<li>使用优化的 Ollama 库或框架（如 o2c 或 ollama-cpp）。</li>
+<li>编写高效的推理代码，减少 I/O 和通信开销。</li>
+</ul>
+<ol start="4">
+<li>监控和调整：</li>
+</ol>
+<ul>
+<li>使用云平台的监控工具（如 AWS CloudWatch、GCP Datadog）监控 Ollama 实例的性能。</li>
+<li>根据监控结果逐步优化模型大小、实例配置和推理代码。</li>
+</ul>
+<hr>
+<h4 id="总结">总结：
+</h4><blockquote>
+<p>部署 DeepSeek 到 Ollama 涉及模型转换、实例配置和性能优化等多个环节。确保每一步都按照正确的步骤执行，并根据具体情况调整配置，以最大化性能和效率。遇到问题时，参考官方文档和社区资源，或联系技术支持。</p>
 </blockquote>
 <hr>
 <p><big>完</big></p>
 <blockquote>
-<p>作者：Shanziyi<br>
-本文纯属自己撰稿，转载时请标明出处 ！<br>
-© Shanziyi 2025<br>
-彩蛋：deepseek也参与到了撰稿中！<br>
+<p>作者: Shanziyi <br>
+本文纯属自己撰稿，无具体参考资料 <br>
+©Copyright 2025 Shanziyi<br>
 <strong>本文采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0协议</a>进行署名——Shanziyi</strong><br></p>
 </blockquote>
 
@@ -408,6 +473,8 @@
     <section class="article-tags">
         
             <a href="/tags/aigc/">AIGC</a>
+        
+            <a href="/tags/faq/">FAQ</a>
         
     </section>
 
@@ -429,12 +496,12 @@
             
                 
 <article class="">
-    <a href="/p/%E5%9C%A8%E5%B0%86-deepseek-%E9%83%A8%E7%BD%B2%E5%88%B0-ollama-%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98faq/">
+    <a href="/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">在将 DeepSeek 部署到 Ollama 的过程中遇到的问题（FAQ）</h2>
+            <h2 class="article-title">在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南</h2>
         </div>
     </a>
 </article>
