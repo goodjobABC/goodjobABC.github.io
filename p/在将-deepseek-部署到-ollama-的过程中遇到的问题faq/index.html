@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://goodjobabc.github.io/p/%E5%9C%A8%E5%B0%86-deepseek-%E9%83%A8%E7%BD%B2%E5%88%B0-ollama-%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98faq/'>
 
-<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="在将 DeepSeek 部署到 Ollama 的过程中遇到的问题（FAQ）">
+<link rel="stylesheet" href="/scss/style.min.1a7809abb5a07be8a375b1411dd1d8eca8ab95d71028d38a369c52bf168e4c48.css"><meta property='og:title' content="在将 DeepSeek 部署到 Ollama 的过程中遇到的问题（FAQ）">
 <meta property='og:description' content=" 观前提示：\n本篇问答相对专业一些，如果仅是自己在本地尝试运行ollma时的基本问题，请期待下一篇问答文章。\n在问答的时候配上轻音乐吧！\n问题：1. DeepSeek 模型如何转换为 Ollama 相容的格式？\r答案：\r要将 DeepSeek 模型部署到 Ollama，需要先将模型转换为 Ollama 支持的格式。以下是具体步骤：\n选择适当的模型大小： 根据 Ollama 的架构，选择适合的模型大小（如 7B、13B 等）。\n大模型可能需要更多内存和计算资源。\n模型转换工具： 使用工具如 llama.cpp 或其他开源工具将 DeepSeek 模型转换为 Ollama 相容的格式。\n例如：\n1 llama-convert --source deepseek --target ollama --n 4 --fp16 生成的文件（如 ollama.f16）是 Ollama 运行所需的参数文件。 问题：2. 为什么转换后的模型在 Ollama 中加载失败？\r答案：\r如果转换后的模型在 Ollama 中加载失败，可能有以下原因：\n模型转换错误： 检查转换工具的日志，确保转换过程没有错误。 确保 DeepSeek 模型路径正确。 依赖项配置： 确保所有依赖项（如 llama.cpp、llama-convert 等）已正确安装并配置。 检查 Makefile 配置，确保环境变量正确设置（如 O_LLLMABackend=1）。 缺少必要的头文件： 确保 o2c 头文件路径正确，例如： 1 #include &lt;o2c/o2c.h&gt; 问题：3. 如何配置 Ollama 实例以支持多 GPU？\r答案：\r本问题演示环境为linux系统\n">
 <meta property='og:url' content='https://goodjobabc.github.io/p/%E5%9C%A8%E5%B0%86-deepseek-%E9%83%A8%E7%BD%B2%E5%88%B0-ollama-%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98faq/'>
 <meta property='og:site_name' content='单单工作室的博客'>
