@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 观前提示：\n本篇问答相对专业一些，如果仅是自己在本地尝试运行ollma时的基本问题，请期待下一篇问答文章。\n在问答的时候配上轻音乐吧！\n问题：1. DeepSeek 模型如何转换为 Ollama 相容的格式？\r答案：\r要将 DeepSeek 模型部署到 Ollama，需要先将模型转换为 Ollama 支持的格式。以下是具体步骤：\n">
-<title>在将 DeepSeek 部署到 Ollama 的过程中遇到的问题（FAQ）</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="安装Ollama与部署DeepSeek：新手必看问题指南\rWindows平台会在接下来的文章中提到\n在学习的时候配上轻音乐吧！\r一、安装Ollama\r安装Ollama 安装Ollama通常需要使用与项目相关的包管理器，如poetry或pip。以下是如何在macOS和Linux上安装Ollama的分步指南：\n">
+<title>部署deepseek失败？新手问题指南2</title>
 
-<link rel='canonical' href='https://goodjobabc.github.io/p/%E5%9C%A8%E5%B0%86-deepseek-%E9%83%A8%E7%BD%B2%E5%88%B0-ollama-%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98faq/'>
+<link rel='canonical' href='https://goodjobabc.github.io/p/%E9%83%A8%E7%BD%B2deepseek%E5%A4%B1%E8%B4%A5%E6%96%B0%E6%89%8B%E9%97%AE%E9%A2%98%E6%8C%87%E5%8D%972/'>
 
-<link rel="stylesheet" href="/scss/style.min.1a7809abb5a07be8a375b1411dd1d8eca8ab95d71028d38a369c52bf168e4c48.css"><meta property='og:title' content="在将 DeepSeek 部署到 Ollama 的过程中遇到的问题（FAQ）">
-<meta property='og:description' content=" 观前提示：\n本篇问答相对专业一些，如果仅是自己在本地尝试运行ollma时的基本问题，请期待下一篇问答文章。\n在问答的时候配上轻音乐吧！\n问题：1. DeepSeek 模型如何转换为 Ollama 相容的格式？\r答案：\r要将 DeepSeek 模型部署到 Ollama，需要先将模型转换为 Ollama 支持的格式。以下是具体步骤：\n">
-<meta property='og:url' content='https://goodjobabc.github.io/p/%E5%9C%A8%E5%B0%86-deepseek-%E9%83%A8%E7%BD%B2%E5%88%B0-ollama-%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98faq/'>
+<link rel="stylesheet" href="/scss/style.min.1a7809abb5a07be8a375b1411dd1d8eca8ab95d71028d38a369c52bf168e4c48.css"><meta property='og:title' content="部署deepseek失败？新手问题指南2">
+<meta property='og:description' content="安装Ollama与部署DeepSeek：新手必看问题指南\rWindows平台会在接下来的文章中提到\n在学习的时候配上轻音乐吧！\r一、安装Ollama\r安装Ollama 安装Ollama通常需要使用与项目相关的包管理器，如poetry或pip。以下是如何在macOS和Linux上安装Ollama的分步指南：\n">
+<meta property='og:url' content='https://goodjobabc.github.io/p/%E9%83%A8%E7%BD%B2deepseek%E5%A4%B1%E8%B4%A5%E6%96%B0%E6%89%8B%E9%97%AE%E9%A2%98%E6%8C%87%E5%8D%972/'>
 <meta property='og:site_name' content='单单工作室的博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AIGC' /><meta property='article:tag' content='FAQ' /><meta property='article:published_time' content='2025-02-11T09:42:30&#43;08:00'/><meta property='article:modified_time' content='2025-02-11T09:42:30&#43;08:00'/>
-<meta name="twitter:title" content="在将 DeepSeek 部署到 Ollama 的过程中遇到的问题（FAQ）">
-<meta name="twitter:description" content=" 观前提示：\n本篇问答相对专业一些，如果仅是自己在本地尝试运行ollma时的基本问题，请期待下一篇问答文章。\n在问答的时候配上轻音乐吧！\n问题：1. DeepSeek 模型如何转换为 Ollama 相容的格式？\r答案：\r要将 DeepSeek 模型部署到 Ollama，需要先将模型转换为 Ollama 支持的格式。以下是具体步骤：\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AIGC' /><meta property='article:published_time' content='2025-02-12T14:06:09&#43;08:00'/><meta property='article:modified_time' content='2025-02-12T14:06:09&#43;08:00'/>
+<meta name="twitter:title" content="部署deepseek失败？新手问题指南2">
+<meta name="twitter:description" content="安装Ollama与部署DeepSeek：新手必看问题指南\rWindows平台会在接下来的文章中提到\n在学习的时候配上轻音乐吧！\r一、安装Ollama\r安装Ollama 安装Ollama通常需要使用与项目相关的包管理器，如poetry或pip。以下是如何在macOS和Linux上安装Ollama的分步指南：\n">
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <meta name="referrer" content="no-referrer-when-downgrade"><style>
   :root {
@@ -219,7 +219,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E5%9C%A8%E5%B0%86-deepseek-%E9%83%A8%E7%BD%B2%E5%88%B0-ollama-%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98faq/">在将 DeepSeek 部署到 Ollama 的过程中遇到的问题（FAQ）</a>
+            <a href="/p/%E9%83%A8%E7%BD%B2deepseek%E5%A4%B1%E8%B4%A5%E6%96%B0%E6%89%8B%E9%97%AE%E9%A2%98%E6%8C%87%E5%8D%972/">部署deepseek失败？新手问题指南2</a>
         </h2>
     
         
@@ -241,7 +241,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Feb 11, 2025</time>
+                <time class="article-time--published">Feb 12, 2025</time>
             </div>
         
 
@@ -271,194 +271,138 @@
     <section class="article-content">
     
     
-    <blockquote>
-<p>观前提示：<br>
-本篇问答相对专业一些，如果仅是自己在本地尝试运行ollma时的基本问题，请期待下一篇问答文章。</p>
+    <h2 id="安装ollama与部署deepseek新手必看问题指南">安装Ollama与部署DeepSeek：新手必看问题指南
+</h2><blockquote>
+<p>Windows平台会在接下来的文章中提到</p>
 </blockquote>
-<p><strong>在问答的时候配上轻音乐吧！</strong></p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=41659405&auto=1&height=66"></iframe>
-<h4 id="问题1-deepseek-模型如何转换为-ollama-相容的格式">问题：1. DeepSeek 模型如何转换为 Ollama 相容的格式？
-</h4><h4 id="答案">答案：
-</h4><p>要将 DeepSeek 模型部署到 Ollama，需要先将模型转换为 Ollama 支持的格式。以下是具体步骤：</p>
+<h4 id="在学习的时候配上轻音乐吧">在学习的时候配上轻音乐吧！
+</h4><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1364561473&auto=1&height=66"></iframe>
+<h3 id="一安装ollama">一、安装Ollama
+</h3><ol>
+<li><strong>安装Ollama</strong></li>
+</ol>
+<p>安装Ollama通常需要使用与项目相关的包管理器，如<code>poetry</code>或<code>pip</code>。以下是如何在macOS和Linux上安装Ollama的分步指南：</p>
+<ul>
+<li><strong>macOS：</strong></li>
+</ul>
 <ol>
-<li>选择适当的模型大小：</li>
+<li>
+<p>检查是否有<code>Python</code>和<code>poetry</code>已安装。如果没有，<a class="link" href="https://python.org"  target="_blank" rel="noopener"
+    >请先安装Python</a>。</p>
+</li>
+<li>
+<p>下载并解压Ollama的仓库：<code>curl -L https://github.com/ggerganov/ollama/releases/download/v3.2.0/ollama-m1.pkg &gt; ollama-m1.pkg</code>; <code>xcrun bin briskt ollama -v</code>.</p>
+</li>
+<li>
+<p>使用poetry安装依赖：<code>poetry install --strict</code>.</p>
+</li>
+<li>
+<p>启动Ollama客户端：<code>poetry run ollama-client</code>.</p>
+</li>
 </ol>
 <ul>
-<li>
-<p>根据 Ollama 的架构，选择适合的模型大小（如 7B、13B 等）。</p>
-</li>
-<li>
-<p>大模型可能需要更多内存和计算资源。</p>
-</li>
+<li><strong>Linux：</strong></li>
 </ul>
-<ol start="2">
-<li>模型转换工具：</li>
-</ol>
-<ul>
-<li>
-<p>使用工具如 llama.cpp 或其他开源工具将 DeepSeek 模型转换为 Ollama 相容的格式。</p>
-</li>
-<li>
-<p>例如：</p>
-</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">llama-convert --source deepseek --target ollama --n <span class="m">4</span> --fp16
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>生成的文件（如 ollama.f16）是 Ollama 运行所需的参数文件。</li>
-</ul>
-<hr>
-<h4 id="问题2-为什么转换后的模型在-ollama-中加载失败">问题：2. 为什么转换后的模型在 Ollama 中加载失败？
-</h4><h4 id="答案-1">答案：
-</h4><p>如果转换后的模型在 Ollama 中加载失败，可能有以下原因：</p>
 <ol>
-<li>模型转换错误：</li>
+<li>
+<p>确保Python和poetry已安装。如果没有，请安装<code>poetry：sudo apt-get install poetry</code>.</p>
+</li>
+<li>
+<p>下载并解压Ollama的仓库：<code>curl -L https://github.com/ggerganov/ollama/releases/download/v3.2.0/ollama Puppy</code>.</p>
+</li>
+<li>
+<p>使用poetry安装依赖：<code>poetry install --strict</code>.</p>
+</li>
+<li>
+<p>启动Ollama客户端：<code>poetry run ollama-client</code>.</p>
+</li>
+<li>
+<p><strong>常见问题</strong></p>
+</li>
 </ol>
 <ul>
-<li>检查转换工具的日志，确保转换过程没有错误。</li>
-<li>确保 DeepSeek 模型路径正确。</li>
+<li>依赖安装失败：如果依赖安装失败，可能是缺少某些系统库或显卡驱动。请检查并安装相关的系统库，或者使用社区提供的镜像。</li>
+<li>编译失败：如果出现编译错误，通常是因为环境变量配置错误。请确保<code>.bash_profile</code>或<code>.zshrc</code>文件中添加了<code>OllamaBgPort</code>相关的配置。</li>
+<li>配置问题：如果无法访问Ollama服务，可能是配置文件路径错误。请检查<code>ollama.conf</code>文件，确保路径正确。</li>
 </ul>
-<ol start="2">
-<li>依赖项配置：</li>
+<h3 id="二部署deepseek">二、部署DeepSeek
+</h3><ol>
+<li><strong>部署DeepSeek</strong></li>
 </ol>
+<p>部署DeepSeek需要在本地运行一个服务，供Ollama和客户端使用。以下是部署DeepSeek的分步指南：</p>
 <ul>
-<li>确保所有依赖项（如 llama.cpp、llama-convert 等）已正确安装并配置。</li>
-<li>检查 Makefile 配置，确保环境变量正确设置（如 O_LLLMABackend=1）。</li>
+<li><strong>安装DeepSeek</strong>：</li>
 </ul>
-<ol start="3">
-<li>缺少必要的头文件：</li>
-</ol>
-<ul>
-<li>确保 o2c 头文件路径正确，例如：</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;o2c/o2c.h&gt;</span><span class="cp">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><hr>
-<h4 id="问题3-如何配置-ollama-实例以支持多-gpu">问题：3. 如何配置 Ollama 实例以支持多 GPU？
-</h4><h4 id="答案-2">答案：
-</h4><blockquote>
-<p>本问题演示环境为linux系统</p>
-</blockquote>
-<p>要使 Ollama 支持多 GPU，需配置 Ollama 实例为多 GPU 模式：</p>
 <ol>
-<li>实例选择：</li>
+<li>在终端中输入以下命令安装DeepSeek框架：<code>poetry install --strict</code>.</li>
+<li>启动DeepSeek服务：<code>poetry run deepseek</code>.</li>
 </ol>
 <ul>
-<li>使用支持多 GPU 的实例类型（如 AWS EC2 多 GPU 实例、Azure VM 多 GPU 实例）。</li>
+<li><strong>配置环境变量</strong>：</li>
 </ul>
-<ol start="2">
-<li>配置文件：</li>
+<ol>
+<li>在终端中输入以下命令打开<code>~/.deepseek/config</code>文件。</li>
+<li>添加以下内容：</li>
 </ol>
-<ul>
-<li>在 <code>/root/.ollama/config/params.json</code> 中设置多 GPU 配置：</li>
-</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;num GPUs&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;multi-GPU backend&#34;</span><span class="p">:</span> <span class="s2">&#34;cudai&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">API_KEY</span><span class="o">=</span><span class="s2">&#34;your_api_key_here&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">API_BASE_URL</span><span class="o">=</span><span class="s2">&#34;http://localhost:8080&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="3">
-<li>环境变量：</li>
-</ol>
+</div><blockquote>
 <ul>
-<li>置 LD_LIBRARY_PATH 包含 GPU 驱动程序（如 CUDA 兼容的驱动）。</li>
+<li>API_KEY是DeepSeek的API密钥。</li>
+<li>API_BASE_URL是DeepSeek的服务器地址。</li>
 </ul>
-<ol start="4">
-<li>验证配置：</li>
-</ol>
-<ul>
-<li>运行<code>ollama --version</code>，确认支持多 GPU。</li>
-</ul>
-<hr>
-<h4 id="问题4-如何将-deepseek-模型部署到-ollama-并连接到云平台">问题：4. 如何将 DeepSeek 模型部署到 Ollama 并连接到云平台？
-</h4><h4 id="答案-3">答案：
-</h4><p>部署 DeepSeek 模型到 Ollama 并连接到云平台的步骤如下：</p>
-<ol>
-<li>部署 Ollama：</li>
-</ol>
-<ul>
-<li>使用云平台（如 AWS、GCP、Azure）部署 Ollama 实例。</li>
-<li>指定 GPU 实例以支持 DeepSeek 模型的计算需求。</li>
-</ul>
-<ol start="2">
-<li>模型转换和加载：</li>
-</ol>
-<ul>
-<li>使用工具将 DeepSeek 模型转换为 Ollama 相容格式。</li>
-<li>在 Ollama 实例中加载转换后的模型。</li>
-</ul>
-<ol start="3">
-<li>连接到云平台：</li>
-</ol>
-<ul>
-<li>使用云平台提供的 SDK（如 AWS SDK、GCP SDK）连接到 Ollama 实例。</li>
-<li>发送推理请求，运行 DeepSeek 模型。</li>
-</ul>
-<hr>
-<h4 id="问题5-在-ollama-中运行-deepseek-模型时遇到性能问题该如何优化">问题：5. 在 Ollama 中运行 DeepSeek 模型时遇到性能问题，该如何优化？
-</h4><h4 id="答案-4">答案：
-</h4><p>如果在 Ollama 中运行 DeepSeek 模型时遇到性能问题，可以尝试以下优化方法：</p>
-<ol>
-<li>模型量化：</li>
-</ol>
-<ul>
-<li>使用量化技术（如 FP16 或 INT8）减少模型大小和内存占用。</li>
-<li>化转换工具的量化设置。</li>
-</ul>
-<ol start="2">
-<li>实例配置：</li>
-</ol>
-<ul>
-<li>根据模型性能需求，选择适当的实例大小（如 T4、V100 等 GPU）。</li>
-<li>调整多 GPU 实例的负载均衡策略。</li>
-</ul>
-<ol start="3">
-<li>优化代码：</li>
-</ol>
-<ul>
-<li>使用优化的 Ollama 库或框架（如 o2c 或 ollama-cpp）。</li>
-<li>编写高效的推理代码，减少 I/O 和通信开销。</li>
-</ul>
-<ol start="4">
-<li>监控和调整：</li>
-</ol>
-<ul>
-<li>使用云平台的监控工具（如 AWS CloudWatch、GCP Datadog）监控 Ollama 实例的性能。</li>
-<li>根据监控结果逐步优化模型大小、实例配置和推理代码。</li>
-</ul>
-<hr>
-<h4 id="总结">总结：
-</h4><blockquote>
-<p>部署 DeepSeek 到 Ollama 涉及模型转换、实例配置和性能优化等多个环节。确保每一步都按照正确的步骤执行，并根据具体情况调整配置，以最大化性能和效率。遇到问题时，参考官方文档和社区资源，或联系技术支持。</p>
 </blockquote>
+<ol start="3">
+<li>保存文件并退出。</li>
+</ol>
+<ul>
+<li><strong>启动DeepSeek服务</strong>：</li>
+</ul>
+<ol>
+<li>在终端中输入以下命令启动DeepSeek服务：<code>poetry run deepseek</code>.</li>
+<li>检查服务是否正常运行：打开浏览器，访问<code>http://localhost:8080</code> 。</li>
+</ol>
+<ul>
+<li><strong>访问DeepSeek服务</strong>：</li>
+</ul>
+<ol>
+<li>
+<p>访问<code>http://localhost:8080</code> 。</p>
+</li>
+<li>
+<p>在页面找到DeepSeek链接。</p>
+</li>
+<li>
+<p>进入<a class="link" href="https://platform.deepseek.com/"  target="_blank" rel="noopener"
+    >DeepSeek页面</a>，输入您的API密钥并开始查询。</p>
+</li>
+<li>
+<p><strong>常见问题</strong></p>
+</li>
+</ol>
+<ul>
+<li>API密钥配置错误：如果无法使用DeepSeek，可能是API密钥配置错误。请确保密钥正确，并且格式为<code>API_KEY=&quot;your_api_key_here&quot;</code>，其中<code>your_api_key_here</code>是您从DeepSeek提供的API密钥。</li>
+<li>服务启动失败：如果服务无法启动，可能是网络问题或配置文件路径错误。请检查网络状态，或者在<code>~/.deepseek/config</code>文件中添加<code>LogLevel=2</code>以获取更多日志信息。</li>
+<li>访问问题：如果无法访问DeepSeek服务，可能是防火墙设置或端口错误。请检查<code>~/.deepseek/config</code>文件中的<code>API_BASE_URL</code>，确保端口和地址设置正确。</li>
+</ul>
+<hr>
+<h4 id="总结">总结
+</h4><p>安装Ollama和部署DeepSeek可能需要一些尝试和错误，但通过逐步配置和环境变量调整，这些问题可以迎刃而解。新手在安装过程中遇到问题时，可以参考官方文档或社区资源，逐步优化配置，最终成功搭建本地的Ollama环境。</p>
 <hr>
 <p><big>完</big></p>
 <blockquote>
-<p>作者: Shanziyi <br>
-本文纯属自己撰稿，无具体参考资料 <br>
-©Copyright 2025 Shanziyi<br>
-<strong>本文采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0协议</a>进行署名——Shanziyi</strong><br></p>
+<p>作者:Shanziyi <br>
+© Shanziyi 2025 <br>
+<strong>本文采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0协议</a>进行署名——Shanziyi</strong><br>
+本文纯属自己撰稿，转载时请标明出处 ！<br></p>
 </blockquote>
 
 	
@@ -473,8 +417,6 @@
     <section class="article-tags">
         
             <a href="/tags/aigc/">AIGC</a>
-        
-            <a href="/tags/faq/">FAQ</a>
         
     </section>
 
@@ -496,12 +438,12 @@
             
                 
 <article class="">
-    <a href="/p/%E9%83%A8%E7%BD%B2deepseek%E5%A4%B1%E8%B4%A5%E6%96%B0%E6%89%8B%E9%97%AE%E9%A2%98%E6%8C%87%E5%8D%972/">
+    <a href="/p/%E5%9C%A8%E5%B0%86-deepseek-%E9%83%A8%E7%BD%B2%E5%88%B0-ollama-%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98faq/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">部署deepseek失败？新手问题指南2</h2>
+            <h2 class="article-title">在将 DeepSeek 部署到 Ollama 的过程中遇到的问题（FAQ）</h2>
         </div>
     </a>
 </article>

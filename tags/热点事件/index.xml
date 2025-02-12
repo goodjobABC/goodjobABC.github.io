@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>热点事件 on 单单工作室的博客</title>
+        <link>http://localhost:1313/tags/%E7%83%AD%E7%82%B9%E4%BA%8B%E4%BB%B6/</link>
+        <description>Recent content in 热点事件 on 单单工作室的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>ShanShanStdio</copyright>
+        <lastBuildDate>Wed, 12 Feb 2025 14:06:09 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E7%83%AD%E7%82%B9%E4%BA%8B%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>部署deepseek失败？新手问题指南2</title>
+        <link>http://localhost:1313/p/%E9%83%A8%E7%BD%B2deepseek%E5%A4%B1%E8%B4%A5%E6%96%B0%E6%89%8B%E9%97%AE%E9%A2%98%E6%8C%87%E5%8D%972/</link>
+        <pubDate>Wed, 12 Feb 2025 14:06:09 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/%E9%83%A8%E7%BD%B2deepseek%E5%A4%B1%E8%B4%A5%E6%96%B0%E6%89%8B%E9%97%AE%E9%A2%98%E6%8C%87%E5%8D%972/</guid>
+        <description>&lt;h2 id=&#34;安装ollama与部署deepseek新手必看问题指南&#34;&gt;安装Ollama与部署DeepSeek：新手必看问题指南
+&lt;/h2&gt;&lt;h3 id=&#34;一安装ollama&#34;&gt;一、安装Ollama
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;安装Ollama&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;安装Ollama通常需要使用与项目相关的包管理器，如&lt;code&gt;poetry&lt;/code&gt;或&lt;code&gt;pip&lt;/code&gt;。以下是如何在macOS和Linux上安装Ollama的分步指南：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;macOS：&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;检查是否有&lt;code&gt;Python&lt;/code&gt;和&lt;code&gt;poetry&lt;/code&gt;已安装。如果没有，&lt;a class=&#34;link&#34; href=&#34;https://python.org&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;请先安装Python&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下载并解压Ollama的仓库：&lt;code&gt;curl -L https://github.com/ggerganov/ollama/releases/download/v3.2.0/ollama-m1.pkg &amp;gt; ollama-m1.pkg&lt;/code&gt;; &lt;code&gt;xcrun bin briskt ollama -v&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用poetry安装依赖：&lt;code&gt;poetry install --strict&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;启动Ollama客户端：&lt;code&gt;poetry run ollama-client&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Linux：&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;确保Python和poetry已安装。如果没有，请安装&lt;code&gt;poetry：sudo apt-get install poetry&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下载并解压Ollama的仓库：&lt;code&gt;curl -L https://github.com/ggerganov/ollama/releases/download/v3.2.0/ollama Puppy&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用poetry安装依赖：&lt;code&gt;poetry install --strict&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;启动Ollama客户端：&lt;code&gt;poetry run ollama-client&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;常见问题&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;依赖安装失败：如果依赖安装失败，可能是缺少某些系统库或显卡驱动。请检查并安装相关的系统库，或者使用社区提供的镜像。&lt;/li&gt;
+&lt;li&gt;编译失败：如果出现编译错误，通常是因为环境变量配置错误。请确保&lt;code&gt;.bash_profile&lt;/code&gt;或&lt;code&gt;.zshrc&lt;/code&gt;文件中添加了&lt;code&gt;OllamaBgPort&lt;/code&gt;相关的配置。&lt;/li&gt;
+&lt;li&gt;配置问题：如果无法访问Ollama服务，可能是配置文件路径错误。请检查&lt;code&gt;ollama.conf&lt;/code&gt;文件，确保路径正确。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;二部署deepseek&#34;&gt;二、部署DeepSeek
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;部署DeepSeek&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;部署DeepSeek需要在本地运行一个服务，供Ollama和客户端使用。以下是部署DeepSeek的分步指南：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;安装DeepSeek&lt;/strong&gt;：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;在终端中输入以下命令安装DeepSeek框架：&lt;code&gt;poetry install --strict&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;启动DeepSeek服务：&lt;code&gt;poetry run deepseek&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;配置环境变量&lt;/strong&gt;：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;在终端中输入以下命令打开&lt;code&gt;~/.deepseek/config&lt;/code&gt;文件。&lt;/li&gt;
+&lt;li&gt;添加以下内容：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;API_KEY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;your_api_key_here&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;API_BASE_URL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;http://localhost:8080&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;API_KEY是DeepSeek的API密钥。&lt;/li&gt;
+&lt;li&gt;API_BASE_URL是DeepSeek的服务器地址。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;保存文件并退出。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;启动DeepSeek服务&lt;/strong&gt;：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;在终端中输入以下命令启动DeepSeek服务：&lt;code&gt;poetry run deepseek&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;检查服务是否正常运行：打开浏览器，访问&lt;code&gt;http://localhost:8080&lt;/code&gt; 。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;访问DeepSeek服务&lt;/strong&gt;：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;访问&lt;code&gt;http://localhost:8080&lt;/code&gt; 。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在页面找到DeepSeek链接。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入&lt;a class=&#34;link&#34; href=&#34;https://platform.deepseek.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;DeepSeek页面&lt;/a&gt;，输入您的API密钥并开始查询。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;常见问题&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;API密钥配置错误：如果无法使用DeepSeek，可能是API密钥配置错误。请确保密钥正确，并且格式为&lt;code&gt;API_KEY=&amp;quot;your_api_key_here&amp;quot;&lt;/code&gt;，其中&lt;code&gt;your_api_key_here&lt;/code&gt;是您从DeepSeek提供的API密钥。&lt;/li&gt;
+&lt;li&gt;服务启动失败：如果服务无法启动，可能是网络问题或配置文件路径错误。请检查网络状态，或者在&lt;code&gt;~/.deepseek/config&lt;/code&gt;文件中添加&lt;code&gt;LogLevel=2&lt;/code&gt;以获取更多日志信息。&lt;/li&gt;
+&lt;li&gt;访问问题：如果无法访问DeepSeek服务，可能是防火墙设置或端口错误。请检查&lt;code&gt;~/.deepseek/config&lt;/code&gt;文件中的&lt;code&gt;API_BASE_URL&lt;/code&gt;，确保端口和地址设置正确。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;总结&#34;&gt;总结
+&lt;/h4&gt;&lt;p&gt;安装Ollama和部署DeepSeek可能需要一些尝试和错误，但通过逐步配置和环境变量调整，这些问题可以迎刃而解。新手在安装过程中遇到问题时，可以参考官方文档或社区资源，逐步优化配置，最终成功搭建本地的Ollama环境。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;big&gt;完&lt;/big&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作者:Shanziyi &lt;br&gt;
+© Shanziyi 2025 &lt;br&gt;
+&lt;strong&gt;本文采用&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;CC BY-NC-SA 4.0协议&lt;/a&gt;进行署名——Shanziyi&lt;/strong&gt;&lt;br&gt;
+本文纯属自己撰稿，转载时请标明出处 ！&lt;br&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
