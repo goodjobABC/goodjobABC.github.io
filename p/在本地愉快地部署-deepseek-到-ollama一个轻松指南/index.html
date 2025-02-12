@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南\r在学习的时候配上纯音乐吧！\n嗯，最近我在学习如何在本地部署模型，想着能不能把 DeepSeek 搬到 Ollama 里，这样用起来应该挺方便的吧！作为一个新手，我决定写一篇文章分享我的探索过程，希望能帮到像我一样的小白。\n准备阶段：安装好装备\r首先，我需要准备好几个“装备”，这些装备是部署 DeepSeek 的必要条件：\n操作系统：当然是需要一台能流畅运行的电脑，Windows、Mac 或者 Linux 都可以。 硬件：显卡、内存、硬盘空间都需要足够的容量。\n编程环境：我选择了 Python，毕竟机器学习离不开它。所以，我得先安装 Python 和一些必要的依赖库，比如 numpy 和 pandas。这些库可以通过 pip 安装：\n1 pip install numpy pandas 深度学习框架：为了训练或部署模型，我需要 PyTorch 或 TensorFlow。这里我选择了 PyTorch，因为它感觉更友好一些。安装命令是：\n1 pip install torch torchvision 下载 DeepSeek 模型：资源准备\n接下来，我需要下载 DeepSeek 的模型文件。这个模型可是个大家伙，下载的时候要注意：\n选择模型大小：\nDeepSeek 有小有大，小版本适合在本地测试，大版本则适合实际应用。我选择了中等大小的模型，大约 20GB 左右。 下载速度：别问我为什么，就是喜欢快一点。所以我选择了网速好的时间下载，大概花了我一个晚上。 存储位置：下载完成后，我不会让它孤零零地躺在硬盘里，而是用 mkdir -p models/deepseek 创建了一个专门的目录，方便以后管理。（推荐这么做）\n架构搭建：本地服务器搭建 现在，我需要搭建一个本地服务器，让它能处理 DeepSeek 的请求。这里有两个选择：本地服务框架和 Ollama。我选择了 Ollama，因为它简单易用，而且我也不太想写复杂的 API。\n">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南\r在学习的时候配上纯音乐吧！\n嗯，最近我在学习如何在本地部署模型，想着能不能把 DeepSeek 搬到 Ollama 里，这样用起来应该挺方便的吧！作为一个新手，我决定写一篇文章分享我的探索过程，希望能帮到像我一样的小白。\n">
 <title>在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南</title>
 
-<link rel='canonical' href='http://localhost:1313/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/'>
+<link rel='canonical' href='https://goodjobabc.github.io/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/'>
 
 <link rel="stylesheet" href="/scss/style.min.1a7809abb5a07be8a375b1411dd1d8eca8ab95d71028d38a369c52bf168e4c48.css"><meta property='og:title' content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南">
-<meta property='og:description' content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南\r在学习的时候配上纯音乐吧！\n嗯，最近我在学习如何在本地部署模型，想着能不能把 DeepSeek 搬到 Ollama 里，这样用起来应该挺方便的吧！作为一个新手，我决定写一篇文章分享我的探索过程，希望能帮到像我一样的小白。\n准备阶段：安装好装备\r首先，我需要准备好几个“装备”，这些装备是部署 DeepSeek 的必要条件：\n操作系统：当然是需要一台能流畅运行的电脑，Windows、Mac 或者 Linux 都可以。 硬件：显卡、内存、硬盘空间都需要足够的容量。\n编程环境：我选择了 Python，毕竟机器学习离不开它。所以，我得先安装 Python 和一些必要的依赖库，比如 numpy 和 pandas。这些库可以通过 pip 安装：\n1 pip install numpy pandas 深度学习框架：为了训练或部署模型，我需要 PyTorch 或 TensorFlow。这里我选择了 PyTorch，因为它感觉更友好一些。安装命令是：\n1 pip install torch torchvision 下载 DeepSeek 模型：资源准备\n接下来，我需要下载 DeepSeek 的模型文件。这个模型可是个大家伙，下载的时候要注意：\n选择模型大小：\nDeepSeek 有小有大，小版本适合在本地测试，大版本则适合实际应用。我选择了中等大小的模型，大约 20GB 左右。 下载速度：别问我为什么，就是喜欢快一点。所以我选择了网速好的时间下载，大概花了我一个晚上。 存储位置：下载完成后，我不会让它孤零零地躺在硬盘里，而是用 mkdir -p models/deepseek 创建了一个专门的目录，方便以后管理。（推荐这么做）\n架构搭建：本地服务器搭建 现在，我需要搭建一个本地服务器，让它能处理 DeepSeek 的请求。这里有两个选择：本地服务框架和 Ollama。我选择了 Ollama，因为它简单易用，而且我也不太想写复杂的 API。\n">
-<meta property='og:url' content='http://localhost:1313/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/'>
+<meta property='og:description' content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南\r在学习的时候配上纯音乐吧！\n嗯，最近我在学习如何在本地部署模型，想着能不能把 DeepSeek 搬到 Ollama 里，这样用起来应该挺方便的吧！作为一个新手，我决定写一篇文章分享我的探索过程，希望能帮到像我一样的小白。\n">
+<meta property='og:url' content='https://goodjobabc.github.io/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/'>
 <meta property='og:site_name' content='单单工作室的博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AIGC' /><meta property='article:published_time' content='2025-02-09T11:00:19&#43;08:00'/><meta property='article:modified_time' content='2025-02-09T11:00:19&#43;08:00'/>
 <meta name="twitter:title" content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南">
-<meta name="twitter:description" content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南\r在学习的时候配上纯音乐吧！\n嗯，最近我在学习如何在本地部署模型，想着能不能把 DeepSeek 搬到 Ollama 里，这样用起来应该挺方便的吧！作为一个新手，我决定写一篇文章分享我的探索过程，希望能帮到像我一样的小白。\n准备阶段：安装好装备\r首先，我需要准备好几个“装备”，这些装备是部署 DeepSeek 的必要条件：\n操作系统：当然是需要一台能流畅运行的电脑，Windows、Mac 或者 Linux 都可以。 硬件：显卡、内存、硬盘空间都需要足够的容量。\n编程环境：我选择了 Python，毕竟机器学习离不开它。所以，我得先安装 Python 和一些必要的依赖库，比如 numpy 和 pandas。这些库可以通过 pip 安装：\n1 pip install numpy pandas 深度学习框架：为了训练或部署模型，我需要 PyTorch 或 TensorFlow。这里我选择了 PyTorch，因为它感觉更友好一些。安装命令是：\n1 pip install torch torchvision 下载 DeepSeek 模型：资源准备\n接下来，我需要下载 DeepSeek 的模型文件。这个模型可是个大家伙，下载的时候要注意：\n选择模型大小：\nDeepSeek 有小有大，小版本适合在本地测试，大版本则适合实际应用。我选择了中等大小的模型，大约 20GB 左右。 下载速度：别问我为什么，就是喜欢快一点。所以我选择了网速好的时间下载，大概花了我一个晚上。 存储位置：下载完成后，我不会让它孤零零地躺在硬盘里，而是用 mkdir -p models/deepseek 创建了一个专门的目录，方便以后管理。（推荐这么做）\n架构搭建：本地服务器搭建 现在，我需要搭建一个本地服务器，让它能处理 DeepSeek 的请求。这里有两个选择：本地服务框架和 Ollama。我选择了 Ollama，因为它简单易用，而且我也不太想写复杂的 API。\n">
+<meta name="twitter:description" content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南\r在学习的时候配上纯音乐吧！\n嗯，最近我在学习如何在本地部署模型，想着能不能把 DeepSeek 搬到 Ollama 里，这样用起来应该挺方便的吧！作为一个新手，我决定写一篇文章分享我的探索过程，希望能帮到像我一样的小白。\n">
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <meta name="referrer" content="no-referrer-when-downgrade"><style>
   :root {
@@ -159,11 +159,11 @@
 
                             <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
                                 
-                                    <option value="http://localhost:1313/en/" >English</option>
+                                    <option value="https://goodjobabc.github.io/en/" >English</option>
                                 
-                                    <option value="http://localhost:1313/" selected>中文</option>
+                                    <option value="https://goodjobabc.github.io/" selected>中文</option>
                                 
-                                    <option value="http://localhost:1313/ar/" >عربي</option>
+                                    <option value="https://goodjobabc.github.io/ar/" >عربي</option>
                                 
                             </select>
                         </li>
@@ -256,7 +256,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -555,7 +555,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.f2a92d39c5cccec410d50d463099e9fbd7e7964eda7d0c39a02145fbc5c83f29.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
