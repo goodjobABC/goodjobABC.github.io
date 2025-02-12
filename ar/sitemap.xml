@@ -19,23 +19,6 @@
                 href="https://goodjobabc.github.io/ar/categories/"
                 />
   </url><url>
-    <loc>https://goodjobabc.github.io/ar/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://goodjobabc.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://goodjobabc.github.io/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ar"
-                href="https://goodjobabc.github.io/ar/tags/"
-                />
-  </url><url>
     <loc>https://goodjobabc.github.io/ar/</loc>
     <xhtml:link
                 rel="alternate"
@@ -51,6 +34,23 @@
                 rel="alternate"
                 hreflang="ar"
                 href="https://goodjobabc.github.io/ar/"
+                />
+  </url><url>
+    <loc>https://goodjobabc.github.io/ar/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://goodjobabc.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://goodjobabc.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ar"
+                href="https://goodjobabc.github.io/ar/tags/"
                 />
   </url>
 </urlset>
