@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>学习笔记 on 单单工作室(单子逸)的博客</title>
+        <link>https://goodjobabc.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <description>Recent content in 学习笔记 on 单单工作室(单子逸)的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>ShanShanStdio(Shanziyi/单子逸)</copyright>
+        <lastBuildDate>Thu, 13 Feb 2025 14:53:33 +0800</lastBuildDate><atom:link href="https://goodjobabc.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>如何正确的使用AI(1)</title>
+        <link>https://goodjobabc.github.io/p/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E4%BD%BF%E7%94%A8ai1/</link>
+        <pubDate>Thu, 13 Feb 2025 14:53:33 +0800</pubDate>
+        
+        <guid>https://goodjobabc.github.io/p/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E4%BD%BF%E7%94%A8ai1/</guid>
+        <description>&lt;h1 id=&#34;如何正确的与ai沟通&#34;&gt;如何正确的与AI沟通
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;在接触AI的时间里，我也积累了不少与AI沟通的经验，特此记录。&lt;br&gt;
+如有错误，请评论区指正，非常感谢！——Shanziyi&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;1ai生成的图片文章不合你意&#34;&gt;1.AI生成的图片/文章不合你意？
+&lt;/h3&gt;&lt;p&gt;在与AI沟通时，你需要把自己的需求用&lt;strong&gt;多个关键词&lt;/strong&gt;描述&lt;strong&gt;清楚&lt;/strong&gt;，举个栗（例）子：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;改善前：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;用户：请帮我生成一篇关于人工智能发展史的文章（描述简单，并不清晰）&lt;br&gt;
+AI:好的。 （生成中）……&lt;br&gt;
+&lt;font color=&#34;red&#34;&gt;最后的生成结果要么是太复杂/太简单，就是描述跑题，意思不当。&lt;/font&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那该怎么办呢？请看下文：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;改善后：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;用户：请帮我生成一篇关于人工智能发展史的文章，700~800字左右，特别关注1950~2000年代，以幽默恢侃的语言讲述（描述细致，目标清晰）&lt;br&gt;
+AI:好的。（生成中）……&lt;br&gt;
+&lt;font color=&#34;red&#34;&gt;最后的生成结果大概率能满足你的要求（可能还会超乎预料）。&lt;/font&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;注：使用生成式人工智能生成图片/其他类型的作品时同理&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;（本文持续更新中，欢迎你的补充）&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作者：Shanziyi&lt;br&gt;
+本文纯属自己撰稿，转载时请标明出处！&lt;br&gt;
+©Shanziyi 2025&lt;br&gt;
+&lt;strong&gt;本文采用&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;CC BY-NC-SA 4.0协议&lt;/a&gt;进行署名——Shanziyi&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

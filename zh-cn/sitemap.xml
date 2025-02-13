@@ -3,10 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://goodjobabc.github.io/tags/aigc/</loc>
-    <lastmod>2025-02-12T14:06:09+08:00</lastmod>
+    <lastmod>2025-02-13T14:53:33+08:00</lastmod>
   </url><url>
     <loc>https://goodjobabc.github.io/categories/</loc>
-    <lastmod>2025-02-12T14:06:09+08:00</lastmod>
+    <lastmod>2025-02-13T14:53:33+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -24,10 +24,10 @@
                 />
   </url><url>
     <loc>https://goodjobabc.github.io/post/</loc>
-    <lastmod>2025-02-12T14:06:09+08:00</lastmod>
+    <lastmod>2025-02-13T14:53:33+08:00</lastmod>
   </url><url>
     <loc>https://goodjobabc.github.io/tags/</loc>
-    <lastmod>2025-02-12T14:06:09+08:00</lastmod>
+    <lastmod>2025-02-13T14:53:33+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -44,11 +44,8 @@
                 href="https://goodjobabc.github.io/tags/"
                 />
   </url><url>
-    <loc>https://goodjobabc.github.io/p/%E9%83%A8%E7%BD%B2deepseek%E5%A4%B1%E8%B4%A5%E6%96%B0%E6%89%8B%E9%97%AE%E9%A2%98%E6%8C%87%E5%8D%972/</loc>
-    <lastmod>2025-02-12T14:06:09+08:00</lastmod>
-  </url><url>
     <loc>https://goodjobabc.github.io/</loc>
-    <lastmod>2025-02-12T14:06:09+08:00</lastmod>
+    <lastmod>2025-02-13T14:53:33+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -65,10 +62,19 @@
                 href="https://goodjobabc.github.io/"
                 />
   </url><url>
-    <loc>https://goodjobabc.github.io/categories/%E7%83%AD%E7%82%B9%E4%BA%8B%E4%BB%B6/</loc>
+    <loc>https://goodjobabc.github.io/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
+    <lastmod>2025-02-13T14:53:33+08:00</lastmod>
+  </url><url>
+    <loc>https://goodjobabc.github.io/p/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E4%BD%BF%E7%94%A8ai1/</loc>
+    <lastmod>2025-02-13T14:53:33+08:00</lastmod>
+  </url><url>
+    <loc>https://goodjobabc.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2025-02-13T14:53:33+08:00</lastmod>
+  </url><url>
+    <loc>https://goodjobabc.github.io/p/%E9%83%A8%E7%BD%B2deepseek%E5%A4%B1%E8%B4%A5%E6%96%B0%E6%89%8B%E9%97%AE%E9%A2%98%E6%8C%87%E5%8D%972/</loc>
     <lastmod>2025-02-12T14:06:09+08:00</lastmod>
   </url><url>
-    <loc>https://goodjobabc.github.io/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
+    <loc>https://goodjobabc.github.io/categories/%E7%83%AD%E7%82%B9%E4%BA%8B%E4%BB%B6/</loc>
     <lastmod>2025-02-12T14:06:09+08:00</lastmod>
   </url><url>
     <loc>https://goodjobabc.github.io/tags/faq/</loc>
