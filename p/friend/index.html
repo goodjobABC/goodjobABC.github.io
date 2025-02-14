@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南\r自2025/2/14起，本文已采用 copyright协议，禁止转载/商业使用——作者。\n在学习的时候配上纯音乐吧！\n">
-<title>在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南</title>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="">
+<title>Friend</title>
 
-<link rel='canonical' href='https://goodjobabc.github.io/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/'>
+<link rel='canonical' href='http://localhost:1313/p/friend/'>
 
-<link rel="stylesheet" href="/scss/style.min.1a7809abb5a07be8a375b1411dd1d8eca8ab95d71028d38a369c52bf168e4c48.css"><meta property='og:title' content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南">
-<meta property='og:description' content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南\r自2025/2/14起，本文已采用 copyright协议，禁止转载/商业使用——作者。\n在学习的时候配上纯音乐吧！\n">
-<meta property='og:url' content='https://goodjobabc.github.io/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/'>
+<link rel="stylesheet" href="/scss/style.min.1a7809abb5a07be8a375b1411dd1d8eca8ab95d71028d38a369c52bf168e4c48.css"><meta property='og:title' content="Friend">
+<meta property='og:description' content="">
+<meta property='og:url' content='http://localhost:1313/p/friend/'>
 <meta property='og:site_name' content='单单工作室(单子逸)的博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AIGC' /><meta property='article:published_time' content='2025-02-09T11:00:19&#43;08:00'/><meta property='article:modified_time' content='2025-02-09T11:00:19&#43;08:00'/>
-<meta name="twitter:title" content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南">
-<meta name="twitter:description" content="在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南\r自2025/2/14起，本文已采用 copyright协议，禁止转载/商业使用——作者。\n在学习的时候配上纯音乐吧！\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='web' /><meta property='article:published_time' content='2025-02-14T12:38:23&#43;08:00'/><meta property='article:modified_time' content='2025-02-14T12:38:23&#43;08:00'/>
+<meta name="twitter:title" content="Friend">
+<meta name="twitter:description" content="">
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <meta name="referrer" content="no-referrer-when-downgrade"><style>
   :root {
@@ -161,11 +161,11 @@
 
                             <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
                                 
-                                    <option value="https://goodjobabc.github.io/en/" >English</option>
+                                    <option value="http://localhost:1313/en/" >English</option>
                                 
-                                    <option value="https://goodjobabc.github.io/" selected>中文</option>
+                                    <option value="http://localhost:1313/" selected>中文</option>
                                 
-                                    <option value="https://goodjobabc.github.io/ar/" >عربي</option>
+                                    <option value="http://localhost:1313/ar/" >عربي</option>
                                 
                             </select>
                         </li>
@@ -198,49 +198,7 @@
     </ol>
 </aside>
 
-    <aside class="sidebar right-sidebar sticky">
-        
-            
-                
-    <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">目录</h2>
-        
-        <div class="widget--toc">
-            <nav id="TableOfContents">
-  <ol>
-    <li><a href="#准备阶段安装好装备">准备阶段：安装好装备</a>
-      <ol>
-        <li>
-          <ol>
-            <li><a href="#搭配-deepseek模型配置">搭配 DeepSeek：模型配置</a></li>
-            <li><a href="#测试阶段验证部署">测试阶段：验证部署</a></li>
-            <li><a href="#成功时刻部署完成">成功时刻：部署完成</a></li>
-            <li><a href="#总结">总结</a></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
-  </ol>
-</nav>
-        </div>
-    </section>
-
-            
-        
-    </aside>
-
+    
 
             <main class="main full-width">
     <article class="main-article">
@@ -250,12 +208,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" >
-                人工智能
-            </a>
-        
-            <a href="/categories/%E7%83%AD%E7%82%B9%E4%BA%8B%E4%BB%B6/" >
-                热点事件
+            <a href="/categories/programming/" >
+                Programming
             </a>
         
     </header>
@@ -263,7 +217,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E6%84%89%E5%BF%AB%E5%9C%B0%E9%83%A8%E7%BD%B2-deepseek-%E5%88%B0-ollama%E4%B8%80%E4%B8%AA%E8%BD%BB%E6%9D%BE%E6%8C%87%E5%8D%97/">在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南</a>
+            <a href="/p/friend/">Friend</a>
         </h2>
     
         
@@ -285,7 +239,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Feb 09, 2025</time>
+                <time class="article-time--published">Feb 14, 2025</time>
             </div>
         
 
@@ -300,7 +254,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 0 分钟
                 </time>
             </div>
         
@@ -315,133 +269,7 @@
     <section class="article-content">
     
     
-    <h1 id="在本地愉快地部署-deepseek-到-ollama一个轻松指南">在本地愉快地部署 DeepSeek 到 Ollama：一个轻松指南
-</h1><blockquote>
-<p>自2025/2/14起，本文已采用 copyright协议，禁止转载/商业使用——作者。</p>
-</blockquote>
-<p><strong>在学习的时候配上纯音乐吧！</strong></p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=30987703&auto=1&height=66"></iframe>
-<p>嗯，最近我在学习如何在本地部署模型，想着能不能把 DeepSeek 搬到 Ollama 里，这样用起来应该挺方便的吧！作为一个新手，我决定写一篇文章分享我的探索过程，希望能帮到像我一样的小白。</p>
-<hr>
-<h2 id="准备阶段安装好装备">准备阶段：安装好装备
-</h2><p>首先，我需要准备好几个“装备”，这些装备是部署 DeepSeek 的必要条件：</p>
-<blockquote>
-<p>操作系统：当然是需要一台能流畅运行的电脑，Windows、Mac 或者 Linux 都可以。
-硬件：显卡、内存、硬盘空间都需要足够的容量。</p>
-</blockquote>
-<p>编程环境：我选择了 Python，毕竟机器学习离不开它。所以，我得先安装 Python 和一些必要的依赖库，比如 numpy 和 pandas。这些库可以通过 pip 安装：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install numpy pandas
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><b>深度学习框架</b>：为了训练或部署模型，我需要 PyTorch 或 TensorFlow。这里我选择了 PyTorch，因为它感觉更友好一些。安装命令是：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install torch torchvision
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><b>下载 DeepSeek 模型：资源准备</b></p>
-<p>接下来，我需要下载 DeepSeek 的模型文件。这个模型可是个大家伙，下载的时候要注意：</p>
-<p><b>选择模型大小：</b></p>
-<p>DeepSeek 有小有大，小版本适合在本地测试，大版本则适合实际应用。我选择了中等大小的模型，大约 20GB 左右。
-下载速度：别问我为什么，就是喜欢快一点。所以我选择了网速好的时间下载，大概花了我一个晚上。
-存储位置：下载完成后，我不会让它孤零零地躺在硬盘里，而是用 <code>mkdir -p models/deepseek</code> 创建了一个专门的目录，方便以后管理。<b>（推荐这么做）</b></p>
-<p><b>架构搭建：本地服务器搭建</b>
-现在，我需要搭建一个本地服务器，让它能处理 DeepSeek 的请求。这里有两个选择：本地服务框架和 Ollama。我选择了 Ollama，因为它简单易用，而且我也不太想写复杂的 API。</p>
-<p><strong>安装 Ollama</strong>: 首先，我需要安装 Ollama。这是一个轻量级的 API，支持多种语言。安装命令是：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone --recursive https://github.com/ollama/ollama-stable
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ollama-stable
-</span></span><span class="line"><span class="cl">python setup.py install
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><b>配置 Ollama：</b>安装完成后，我需要告诉 Ollama 位置在哪里。这一步可以通过 ollama config 设置：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ollama config set-model-path models/deepseek
-</span></span><span class="line"><span class="cl">ollama config set-inference-batch-size <span class="m">1</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这样一来，Ollama 就知道我的模型在哪里了。</p>
-<hr>
-<h4 id="搭配-deepseek模型配置">搭配 DeepSeek：模型配置
-</h4><p>现在，我需要让 DeepSeek 和 Ollama 配对，这样才能协作。这一步有点挑战</p>
-<p>设置 DeepSeek 配置文件：DeepSeek 的配置文件位于 <code>models/deepseek/params.json 或 .toml 或 .yaml</code>。我需要确保这个文件的路径正确。如果路径不对，DeepSeek 和 Ollama 就无法通信了。
-启动 DeepSeek：运行 DeepSeek 后，我需要告诉它 Ollama 的服务端口。通常，Ollama 服务监听在 1234 端口。所以，我添加了以下配置：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">model</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="nx">name</span> <span class="p">=</span> <span class="nx">deepseek</span>
-</span></span><span class="line"><span class="cl"><span class="nx">basedir</span> <span class="p">=</span> <span class="nx">models</span><span class="err">/</span><span class="nx">deepseek</span>
-</span></span><span class="line"><span class="cl"><span class="nx">endpoint</span> <span class="p">=</span> <span class="nx">ollama</span><span class="err">:</span><span class="mi">1234</span>
-</span></span><span class="line"><span class="cl"><span class="nx">inference-batch-size</span> <span class="p">=</span> <span class="mi">1</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="测试阶段验证部署">测试阶段：验证部署
-</h4><p>终于到了测试环节，我需要确保部署成功。步骤如下：</p>
-<ol>
-<li>运行 Ollama 服务：启动 Ollama 服务，确保它可以正常工作。打开终端：</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python -m ollama ollama-stable/ollama
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
-<p>如果服务启动成功，Ollama 会输出一条欢快的的信息。</p>
-</blockquote>
-<ol start="2">
-<li>
-<p>访问 DeepSeek 端点：打开浏览器，进入 http://localhost:8080 。这是我配置的 Default 服务端口。</p>
-</li>
-<li>
-<p>发送预测请求：输入一些简单的文本，比如“Hello, world!”，然后按回车。Ollama 应该会将请求转发给 DeepSeek，然后返回预测结果。</p>
-</li>
-</ol>
-<hr>
-<h4 id="成功时刻部署完成">成功时刻：部署完成
-</h4><p>当我看到 DeepSeek 和 Ollama 顺利通信时，内心充满了喜悦。虽然整个过程有点曲折，但最终的结果让我感到成就感满满。</p>
-<h4 id="总结">总结
-</h4><p>部署 DeepSeek 到本地 Ollama 的过程虽然有点复杂，但通过一步步的尝试，我成功了！这让我更加了解了机器学习模型的部署流程，也让我对 Ollama 这个平台有了更深的了解。</p>
-<blockquote>
-<p>希望这篇文章能帮助到和我一样对部署模型感到困惑的小白。</p>
-</blockquote>
-<hr>
-<p><big>完</big></p>
-<blockquote>
-<p>作者：Shanziyi<br>
-本文纯属自己撰稿，禁止转载，引用时请标明出处 ！<br>
-© Shanziyi 2025<br>
-彩蛋：deepseek也参与到了撰稿中！<br></p>
-</blockquote>
-
+    
 	
     <span id="busuanzi_container_page_pv" style="color: rgb(60, 106, 255)">总访问量: <span
             id="busuanzi_value_page_pv"></span></span>
@@ -453,7 +281,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/aigc/">AIGC</a>
+            <a href="/tags/web/">Web</a>
         
     </section>
 
@@ -468,7 +296,7 @@
 
 
 
-        <span>copyright Shanziyi——禁止转载，引用请标明链接</span>
+        <span>Licensed under CC BY-NC-SA 4.0</span>
     </section>
     </footer>
 
@@ -511,38 +339,12 @@
             
                 
 <article class="">
-    <a href="/p/%E9%83%A8%E7%BD%B2deepseek%E5%A4%B1%E8%B4%A5%E6%96%B0%E6%89%8B%E9%97%AE%E9%A2%98%E6%8C%87%E5%8D%972/">
+    <a href="/p/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%8C%85%E5%90%AB%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">部署deepseek失败？新手问题指南2</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/%E5%9C%A8%E5%B0%86-deepseek-%E9%83%A8%E7%BD%B2%E5%88%B0-ollama-%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98faq/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">在将 DeepSeek 部署到 Ollama 的过程中遇到的问题（FAQ）</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E4%BD%BF%E7%94%A8ai1/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">如何正确的使用AI(1)</h2>
+            <h2 class="article-title">怎样建立属于你的个人博客（包含避坑指南）</h2>
         </div>
     </a>
 </article>
@@ -716,7 +518,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.f2a92d39c5cccec410d50d463099e9fbd7e7964eda7d0c39a02145fbc5c83f29.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
