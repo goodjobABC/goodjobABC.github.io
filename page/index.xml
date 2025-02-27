@@ -16,6 +16,24 @@
         <description></description>
         </item>
         <item>
+        <title>关于|About</title>
+        <link>https://goodjobabc.github.io/%E5%85%B3%E4%BA%8Eabout/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://goodjobabc.github.io/%E5%85%B3%E4%BA%8Eabout/</guid>
+        <description>&lt;h3 id=&#34;单单工作室的博客&#34;&gt;单单工作室的博客
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;该博客创立于2024/12/6&lt;br&gt;
+&lt;strong&gt;主要维护者:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;goodjobabc.github.io&#34; &gt;Shanziyi&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;联系邮箱：&lt;/strong&gt;&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;mailto:shanshanstdio@foxmail.com&#34; &gt;shanshanstdio@foxmail.com&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
         <title>搜索|Search</title>
         <link>https://goodjobabc.github.io/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -24,12 +42,13 @@
         <description></description>
         </item>
         <item>
-        <title>友链 | Friends</title>
-        <link>https://goodjobabc.github.io/friends/</link>
+        <title>邮箱|mail</title>
+        <link>https://goodjobabc.github.io/%E9%82%AE%E7%AE%B1mail/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://goodjobabc.github.io/friends/</guid>
-        <description></description>
+        <guid>https://goodjobabc.github.io/%E9%82%AE%E7%AE%B1mail/</guid>
+        <description>&lt;h3 id=&#34;shanshanstdiofoxmailcom&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;mailto:shanshanstdio@foxmail.com&#34; &gt;shanshanstdio@foxmail.com&lt;/a&gt;
+&lt;/h3&gt;&lt;!-- 图标mail由单单工作室添加 --&gt;</description>
         </item>
         <item>
         <title>友情链接|Links</title>
