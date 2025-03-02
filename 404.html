@@ -341,7 +341,25 @@ crossorigin="anonymous"></script><meta name='description' content="臣鞠躬尽�
             const searchKeyword = wrongUrl.pathname.split(/[/|-]/).join(' ').trim();
 
             document.getElementById('searchInput').setAttribute('value', searchKeyword);
-        </script><footer class="site-footer">
+        </script>
+		<p id="yiyan">
+			<strong><a href="#">单单工作室——每日一言：</a></strong>
+		</p>
+		<p id="hitokoto">
+		  <a href="#" id="hitokoto_text">:D 获取中...</a>
+		</p>
+		
+		<script>
+		  fetch('https://v1.hitokoto.cn')
+			.then(response => response.json())
+			.then(data => {
+			  const hitokoto = document.querySelector('#hitokoto_text')
+			  hitokoto.href = `https://goodjobabc.github.io` 
+			  hitokoto.innerText = data.hitokoto
+			})
+			.catch(console.error)
+		</script>
+		<footer class="site-footer">
     <section class="copyright">
         &copy; 
         
