@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Shan Shan Stdio BLOG</title>
-        <link>https://goodjobabc.github.io/en/</link>
+        <link>http://localhost:1313/en/</link>
         <description>Recent content on Shan Shan Stdio BLOG feedId:117928732039862272+userId:117928202431036416</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <copyright>ShanShanStdio(Shanziyi/单子逸)</copyright><atom:link href="https://goodjobabc.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+        <copyright>ShanShanStdio(Shanziyi/单子逸)</copyright><atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>
